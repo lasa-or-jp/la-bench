@@ -1,0 +1,17 @@
+theme: jekyll-theme-minimal
+title: LA-Bench 2025
+description: Laboratory Automation Competition
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+navigation:
+  - title: Home
+    url: /
+  - title: Leaderboard
+    url: /leaderboard.html
+  - title: Submission Guide
+    url: /submission-guide.html
+  - title: GitHub
+    url: https://github.com/lasa-jp/la-bench

@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files (to be added later)
+data/private_test/
+*.pdf
+*.csv
+*.xlsx
+*.xls
+
+# Submissions
+submissions/*
+!submissions/.gitkeep
+!submissions/example/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# API keys and secrets
+.env
+.env.local
+config/secrets.yaml
+*_api_key.txt
+
+# Model files
+*.pkl
+*.h5
+*.pth
+*.onnx
+models/
+
+# Output files
+output/
+results/
+predictions/
+
+# Documentation build
+docs/_site/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+
+# Node (if using any JS tools)
+node_modules/
+package-lock.json
+yarn.lock

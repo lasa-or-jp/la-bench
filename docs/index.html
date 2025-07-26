@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA-Bench 2025: 概要</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css">
+    <style>
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: -45px -45px 45px -45px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .timeline-date {
+            min-width: 120px;
+            font-weight: bold;
+        }
+        .timeline-content {
+            padding-left: 20px;
+        }
+        .prize-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .prize-card {
+            border: 2px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .prize-amount {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>LA-Bench 2025</h1>
+        <h2>概要</h2>
+        <p>Laboratory Automation Competition</p>
+    </div>
+
+    <nav class="nav">
+        <a href="/">ホーム</a>
+        <a href="/leaderboard.html">リーダーボード</a>
+        <a href="/submission-guide.html">投稿ガイド</a>
+        <a href="https://github.com/lasa-jp/la-bench">GitHub</a>
+    </nav>
+
+    <div class="markdown-body">
+        <h2>1. 概要</h2>
+        <p>LA-Bench 2025は、実験自動化（Laboratory Automation）における言語モデルとAIエージェントの性能を評価する国際的なコンペティションです。</p>
+
+        <h2>2. タスクカテゴリー</h2>
+        <h3>テキスト</h3>
+        <ul>
+            <li><strong>論文読解</strong>: 化学論文から<br>
+                特定の実験条件や結果の抽出</li>
+            <li><strong>実験計画</strong>: 与えられた目標に対するPDFへの出力</li>
+        </ul>
+
+        <h3>ロボット</h3>
+        <ul>
+            <li><strong>軌道生成</strong>: 実験器具の配置からロボットアームの軌道をYAML形式で生成</li>
+        </ul>
+
+        <h2>3. スケジュール</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025-09-01</div>
+                <div class="timeline-content">エントリー開始（第2期）</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025-10-10</div>
+                <div class="timeline-content">Public Test Dataset 公開</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025-11-13</div>
+                <div class="timeline-content">Private Test Dataset 公開</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025-11-20</div>
+                <div class="timeline-content">提出締切</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025-12-20</div>
+                <div class="timeline-content">結果発表</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-05</div>
+                <div class="timeline-content">優勝者による発表（学会等）</div>
+            </div>
+        </div>
+
+        <h2>4. 賞金</h2>
+        <div class="prize-section">
+            <div class="prize-card">
+                <h3>LLM部門</h3>
+                <p>最優秀賞</p>
+                <div class="prize-amount">10万円</div>
+                <p>優秀賞</p>
+                <div class="prize-amount">5万円</div>
+            </div>
+            <div class="prize-card">
+                <h3>専門家部門</h3>
+                <p>最優秀賞</p>
+                <div class="prize-amount">10万円</div>
+                <p>優秀賞</p>
+                <div class="prize-amount">5万円</div>
+            </div>
+        </div>
+
+        <h2>5. データセット</h2>
+        <ul>
+            <li><strong>Example Dataset</strong>: 10問（練習用）</li>
+            <li><strong>Public Test Dataset</strong>: 10問（Development Phase用）</li>
+            <li><strong>Private Test Dataset</strong>: 10問（Test Phase用）</li>
+        </ul>
+
+        <h2>6. 評価方法</h2>
+        <h3>Development Phase</h3>
+        <ul>
+            <li>LLM部門のみ参加可能</li>
+            <li>リーダーボードで順位を確認可能</li>
+        </ul>
+
+        <h3>Test Phase</h3>
+        <ul>
+            <li>第1週：LLM部門の評価期間</li>
+            <li>第2週：専門家部門<br>
+上位10チームの評価期間</li>
+        </ul>
+
+        <h3>評価指標</h3>
+        <ul>
+            <li>正確性</li>
+            <li>完全性</li>
+            <li>形式の適切性</li>
+            <li>実行可能性</li>
+        </ul>
+
+        <h2>7. 参加方法</h2>
+        <ol>
+            <li>GitHubリポジトリから必要なコードとデータをダウンロード</li>
+            <li>実装コードを作成</li>
+            <li>指定フォーマットで提出</li>
+            <li>Google Colabでの実行とローカル環境での確認</li>
+        </ol>
+
+        <h2>8. 主催・協賛</h2>
+        <ul>
+            <li><strong>主催</strong>: 東京大学（Science Aid）</li>
+            <li><strong>協賛</strong>: 一般社団法人 実験自動化推進協会（LASA）</li>
+        </ul>
+
+        <h2>9. お問い合わせ</h2>
+        <p>ご質問やお問い合わせは、<a href="https://github.com/lasa-jp/la-bench/issues">GitHub Issues</a>までお願いします。</p>
+    </div>
+</body>
+</html>

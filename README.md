@@ -1,5 +1,12 @@
 # LA-Bench 2025: 実験手順生成トラック
 
+<p align="center">
+  <a href="https://lasa-or-jp.github.io/la-bench/">Website</a> •
+  <!-- <a href="https://arxiv.org/abs/...">Paper</a> • -->
+  <a href="https://github.com/lasa-or-jp/la-bench/tree/main/data/example">Data</a>
+  <!-- <a href="https://discord.gg/">Discord</a> • -->
+</p>
+
 ## 概要
 
 LA-Bench (Laboratory Automation Benchmark) は、科学実験の自動化を実現するためのベンチマークです。
@@ -99,14 +106,16 @@ la-bench/
 
 ## 主催・後援
 
-### 運営チーム
-<a href="https://github.com/lasa-jp/la-bench/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=lasa-jp/la-bench" />
+### 主催
+- 一般社団法人 ラボラトリーオートメーション協会
+
+### コントリビューター
+<a href="https://github.com/lasa-or-jp/la-bench/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lasa-or-jp/la-bench" />
 </a>
 
 ### 支援
-- 一般社団法人 ラボラトリーオートメーション協会
-- 一般社団法人 人工知能学会
+- 一般社団法人 人工知能学会「2025年度人工知能学会コンペティション開催支援制度」
 
 ### スポンサー募集
 本コンペティションでは、科学実験自動化の発展に賛同いただける企業・団体様からのスポンサーシップを募集しております。

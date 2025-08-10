@@ -39,6 +39,7 @@ env/
 *~
 .project
 .pydevproject
+.history/
 
 # OS
 .DS_Store

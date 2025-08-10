@@ -1,131 +1,149 @@
-# LA-Bench 2025: 実験手順生成トラック
+# LA-Bench: Laboratory Automation Benchmark
 
-<p align="center">
-  <a href="https://lasa-or-jp.github.io/la-bench/">Website</a> •
-  <!-- <a href="https://arxiv.org/abs/...">Paper</a> • -->
-  <a href="https://github.com/lasa-or-jp/la-bench/tree/main/data/example">Data</a>
-  <!-- <a href="https://discord.gg/">Discord</a> • -->
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Website-LA--Bench-blue)](https://lasa-or-jp.github.io/la-bench/)
 
-## 概要
+実験手順生成タスクのためのベンチマークデータセット
 
-LA-Bench (Laboratory Automation Benchmark) は、科学実験の自動化を実現するためのベンチマークです。
-本トラックでは、入力情報（実験指示やプロトコル）から実行可能な実験手順を生成することを競います。
+## 🚀 Quick Start
 
+```bash
+# リポジトリのクローン
+git clone https://github.com/lasa-or-jp/la-bench.git
+cd la-bench
 
-### 背景
+# サンプルデータの確認
+ls data/example/
 
-近年のAI技術の発展により、計算機内での研究自動化は進展していますが、実験科学の自動化には物理的な実験手順の詳細化が必要です。
-本コンペティションは、このギャップを埋めることを目的としています。
+# ベースラインの実行
+python code/baseline/run_baseline.py --input data/example/input.yaml
+```
 
-## タスク内容
+## 📊 Dataset
 
-### 入力
-- **実験指示**: 実験目的を含む要件（例：「T75フラスコ2本の線維芽細胞の培地交換をする」）
-- **プロトコル**: 
-  - 準備するもの
-  - 手順
-- **最終状態**: 
-  - 得られるもの
-  - 状態
+| Dataset | Size | Purpose | Availability |
+|---------|------|---------|--------------|
+| Example | 10 | Development | ✅ Available |
+| Public Test | 10 | Development Phase | 📅 2025-10-10 |
+| Private Test | 10 | Test Phase | 📅 2025-11-13 |
 
-### 出力
-- **実験手順**: 具体的な名称、数値、単位を含む実行可能な手順（YAML形式）
+## 📝 Data Format
 
-## スケジュール
+### Input Format (YAML)
+```yaml
+experiment_id: "exp_001"
+instruction: "T75フラスコ2本の線維芽細胞の培地交換をする"
+protocols:
+  - 準備するもの:
+    - DMEM + 10% FBS培地
+    - 70%エタノール
+  - 手順:
+    - 培地を37℃に温める
+    - 古い培地を除去する
+final_state:
+  - 得られるもの: "培地交換済みのT75フラスコ2本"
+  - 状態: "細胞は新しい培地中で培養継続"
+```
 
-| 日付 | 内容 |
-|------|------|
-| 2025-09-01 | 公式サイト公開・参加登録開始 |
-| 2025-10-10 | Public Test Dataset 公開 |
-| 2025-11-13 | Private Test Dataset 公開 |
-| 2025-11-20 | 提出締切 |
-| 2025-12-20 | 結果公開 |
-| 2026-05 | 人工知能学会全国大会にて表彰・発表 |
+### Output Format (YAML)
+```yaml
+experiment_id: "exp_001"
+procedure:
+  - step: 1
+    action: "準備"
+    details:
+      - "クリーンベンチを70%エタノールで清拭する"
+      - "培地DMEM + 10% FBSを37℃に温める"
+    materials:
+      - name: "70%エタノール"
+        amount: "適量"
+    equipment:
+      - "クリーンベンチ"
+    duration: "10分"
+```
 
-## データセット
+## 🎯 Evaluation Metrics
 
-- **Example Dataset**: 10件（手法開発用）
-- **Public Test Dataset**: 10件（Development Phase評価用）
-- **Private Test Dataset**: 10件（Test Phase評価用）
+評価は以下の4つの観点で行われます：
 
-## 評価方法
+- **正確性** (25%): 生成された手順の正確さ
+- **論理的整合性** (25%): 手順の論理的な一貫性
+- **網羅性** (25%): 必要な情報の網羅
+- **実行可能性** (25%): 実際に実行可能な手順
 
-### Development Phase (~2025-11-12)
-- LLM評価によるスコアリング
-- リーダーボードでのリアルタイム順位表示
-
-### Test Phase (2025-11-13~)
-- 第1次評価：LLM評価（全チーム対象）
-- 第2次評価：専門家評価（上位10チーム対象）
-
-### 評価観点
-- 正確性
-- 論理的整合性
-- 必要な情報の網羅性
-- 暗黙的要件の理解
-
-## 賞金
-
-### LLM評価部門
-- 最優秀賞: 20万円
-- 優秀賞: 5万円
-
-### 専門家評価部門
-- 最優秀賞: 20万円
-- 優秀賞: 5万円
-
-## 参加方法
-
-1. GitHubリポジトリからデータセットとサンプルコードをダウンロード
-2. 実験手順生成システムを開発
-3. 指定フォーマットで結果を提出
-
-
-## 参加規則
-- コード提出義務：Google ColabノートブックとREADMEの提出必須
-- 発表義務：受賞チームは人工知能学会全国大会での発表必須
-
-
-## リポジトリ構成
+## 🏗️ Repository Structure
 
 ```
 la-bench/
-├── data/                    # データセット
-│   ├── example/            # Example Dataset
-│   ├── public_test/        # Public Test Dataset
-│   └── private_test/       # Private Test Dataset (開催後公開)
-├── code/                   # コード
-│   ├── baseline/           # ベースラインコード
-│   └── evaluation/         # 評価スクリプト
-├── docs/                   # ドキュメント
-│   └── _site/             # GitHub Pages用
-└── submissions/           # 提出サンプル
+├── data/
+│   ├── example/          # Example dataset
+│   ├── public_test/      # Public test dataset (Oct 10)
+│   └── private_test/     # Private test dataset (Nov 13)
+├── code/
+│   ├── baseline/         # Baseline implementation
+│   └── evaluation/       # Evaluation scripts
+├── docs/                 # Website files
+└── submissions/          # Submission examples
 ```
 
+## 💻 Baseline
 
-## 主催・後援
+```python
+# code/baseline/run_baseline.py
+from la_bench import LABenchDataset, Evaluator
 
-### 主催
-- 一般社団法人 ラボラトリーオートメーション協会
+# データセットの読み込み
+dataset = LABenchDataset('data/example/')
 
-### コントリビューター
-<a href="https://github.com/lasa-or-jp/la-bench/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=lasa-or-jp/la-bench" />
-</a>
+# 予測の実行
+predictions = baseline_model(dataset)
 
-### 支援
-- 一般社団法人 人工知能学会「2025年度人工知能学会コンペティション開催支援制度」
+# 評価
+evaluator = Evaluator()
+scores = evaluator.evaluate(predictions, dataset.ground_truth)
+```
 
-### スポンサー募集
-本コンペティションでは、科学実験自動化の発展に賛同いただける企業・団体様からのスポンサーシップを募集しております。
-詳細については[Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform?usp=dialog)よりお問い合わせください。
+## 📤 Submission
 
+提出には以下が必要です：
 
-## お問い合わせ
+1. **predictions.yaml** - 全ての予測結果
+2. **notebook.ipynb** - Google Colabノートブック
+3. **README.md** - 手法の説明
 
-コンペティションに関するお問い合わせは、[Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform?usp=dialog)からお願いします。
+詳細は[Submission Guide](docs/submission-guide.md)を参照してください。
 
-## ライセンス
+## 🔗 Links
 
-本リポジトリのコンテンツは[MITライセンス](LICENSE)の下で公開されています。
+- 🌐 [Competition Website](https://lasa-or-jp.github.io/la-bench/)
+- 📊 [Leaderboard](https://lasa-or-jp.github.io/la-bench/#leaderboard)
+- 📧 [Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)
+- 🏢 [LASA](https://lasa.or.jp/)
+
+## 📅 Important Dates
+
+- **2025-09-01**: Competition launch
+- **2025-10-10**: Public test data release
+- **2025-11-13**: Private test data release  
+- **2025-11-20**: Submission deadline
+- **2025-12-20**: Results announcement
+
+## 🏆 Organizers
+
+**主催**: 一般社団法人 ラボラトリーオートメーション協会  
+**支援**: 一般社団法人 人工知能学会
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Citation
+
+```bibtex
+@misc{labench2025,
+  title={LA-Bench: Laboratory Automation Benchmark},
+  author={Laboratory Automation Society of Japan},
+  year={2025},
+  howpublished={\url{https://github.com/lasa-or-jp/la-bench}}
+}
+```

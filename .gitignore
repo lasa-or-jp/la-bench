@@ -86,6 +86,7 @@ models/
 
 # Output files
 output/
+outputs
 results/
 predictions/
 

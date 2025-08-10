@@ -2,11 +2,18 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Website](https://img.shields.io/badge/Website-LA--Bench-blue)](https://lasa-or-jp.github.io/la-bench/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb)
+
 
 実験手順生成タスクのためのベンチマークデータセット
 
 ## 🚀 Quick Start
 
+### Google Colabで実行（推奨）
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb)
+上記ボタンをクリックして、ブラウザ上で即座にベースラインを実行できます。
+
+### ローカル環境で実行
 ```bash
 # リポジトリのクローン
 git clone https://github.com/lasa-or-jp/la-bench.git
@@ -124,13 +131,13 @@ scores = evaluator.evaluate(predictions, dataset.ground_truth)
 
 - **2025-09-01**: Competition launch
 - **2025-10-10**: Public test data release
-- **2025-11-13**: Private test data release  
+- **2025-11-13**: Private test data release
 - **2025-11-20**: Submission deadline
 - **2025-12-20**: Results announcement
 
 ## 🏆 Organizers
 
-**主催**: 一般社団法人 ラボラトリーオートメーション協会  
+**主催**: 一般社団法人 ラボラトリーオートメーション協会
 **支援**: 一般社団法人 人工知能学会
 
 ## 📜 License

@@ -9,25 +9,10 @@
 
 ## 🚀 Quick Start
 
-### Google Colabで実行（推奨）
+### Google Colabで実行
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb)
-上記ボタンをクリックして、ブラウザ上で即座にベースラインを実行できます。
 
-### ローカル環境で実行
-```bash
-# リポジトリのクローン
-git clone https://github.com/lasa-or-jp/la-bench.git
-cd la-bench
-
-# サンプルデータの確認
-ls data/example/
-
-# ベースラインの実行
-python code/baseline/run_baseline.py --input data/example/input.yaml
-
-# サンプルコードの実行（Google Colab）
-# https://colab.research.google.com/drive/1UYn6NQnXS5v2xyTUUlwFQGpIn8eTC-DQ?usp=sharing
-```
+上記ボタンをクリックして、ブラウザ上で即座にベースラインを実行できます。環境構築不要で、データセットのダウンロードから評価まで、すべての処理を体験できます。
 
 ## 📊 Dataset
 
@@ -89,29 +74,21 @@ la-bench/
 │   ├── example/          # Example dataset
 │   ├── public_test/      # Public test dataset (Oct 10)
 │   └── private_test/     # Private test dataset (Nov 13)
-├── code/
-│   ├── baseline/         # Baseline implementation
-│   └── evaluation/       # Evaluation scripts
+├── notebooks/
+│   └── baseline.ipynb    # Google Colab notebook
 ├── docs/                 # Website files
 └── submissions/          # Submission examples
 ```
 
 ## 💻 Baseline
 
-```python
-# code/baseline/run_baseline.py
-from la_bench import LABenchDataset, Evaluator
+ベースライン実装は[Google Colabノートブック](https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb)で提供しています。
+以下の機能が含まれています：
 
-# データセットの読み込み
-dataset = LABenchDataset('data/example/')
-
-# 予測の実行
-predictions = baseline_model(dataset)
-
-# 評価
-evaluator = Evaluator()
-scores = evaluator.evaluate(predictions, dataset.ground_truth)
-```
+- データセットの読み込みと前処理
+- シンプルなベースラインモデル
+- 評価メトリクスの計算
+- 結果の可視化
 
 ## 📤 Submission
 

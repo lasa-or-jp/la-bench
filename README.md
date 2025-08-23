@@ -96,13 +96,6 @@ la-bench/
 
 提出方法の詳細は現在準備中です。決定次第、公開いたします。
 
-## 🔗 関連リンク
-
-- 🌐 [Competition Website](https://lasa-or-jp.github.io/la-bench/)
-- 📊 [Leaderboard](https://lasa-or-jp.github.io/la-bench/#leaderboard)
-- 📧 [Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)
-- 🏢 [LASA](https://lasa.or.jp/)
-
 ## 📅 スケジュール
 
 | 日付        | 内容                                                                 |

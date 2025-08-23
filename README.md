@@ -4,7 +4,7 @@
 [![Website](https://img.shields.io/badge/Website-LA--Bench-blue)](https://lasa-or-jp.github.io/la-bench/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb)
 
-🌐 **[公式Webサイト](https://lasa-or-jp.github.io/la-bench/)** | 📊 **[リーダーボード](https://lasa-or-jp.github.io/la-bench/#leaderboard)** | 📧 **[お問い合わせ](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)**
+🌐 **[公式Webサイト](https://lasa-or-jp.github.io/la-bench/)** | 📧 **[お問い合わせ](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)**
 
 
 実験手順生成タスクのためのベンチマークデータセット

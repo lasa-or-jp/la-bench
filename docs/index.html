@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LA-Bench 2025 | 実験手順生成AIコンペティション</title>
     <meta name="description" content="LA-Bench 2025は、実験指示から実行可能な実験手順を自動生成するAIの能力を競うコンペティションです。総賞金50万円。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,651 +14,658 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans CJK JP", sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Header with Icons */
+        .header-icons {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e1e4e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-icons-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 1.3rem;
+            font-weight: 600;
             color: #1a1a1a;
-            background: #ffffff;
+        }
+        
+        .icon-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .icon-links a {
+            color: #586069;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        
+        .icon-links a:hover {
+            color: #0366d6;
+        }
+        
+        .icon-links i {
+            font-size: 1.1rem;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #6B46C1 0%, #0EA5E9 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,117.3C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
         }
         
         .hero-content {
-            position: relative;
-            z-index: 1;
             max-width: 900px;
             margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .hero .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             opacity: 0.95;
-            font-weight: 300;
         }
         
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stat {
-            text-align: center;
-        }
-        
-        .hero-stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .hero-stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .hero-buttons {
-            margin-top: 40px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
+        .prize-banner {
             display: inline-block;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            font-size: 1.1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
         }
         
-        .btn-primary {
-            background: white;
-            color: #6B46C1;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.5);
-        }
-        
-        /* Container */
+        /* Main Content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
         
-        /* Section Styles */
         .section {
-            margin-bottom: 100px;
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
             color: #1a1a1a;
-            font-weight: 700;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
         }
         
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: #2c3e50;
         }
         
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #6B46C1 0%, #0EA5E9 100%);
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding: 20px 0;
-        }
-        
-        .timeline-content {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            width: calc(50% - 40px);
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: auto;
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: #6B46C1;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 4px solid #6B46C1;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-        
-        /* Prize Cards */
-        .prize-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .prize-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .prize-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #6B46C1 0%, #0EA5E9 100%);
-        }
-        
-        .prize-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .prize-title {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: #333;
-        }
-        
-        .prize-item {
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 20px 0;
         }
         
-        .prize-label {
-            color: #666;
+        .schedule-table th,
+        .schedule-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        
+        .schedule-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        .schedule-table tr:hover {
+            background: #f6f8fa;
+        }
+        
+        /* Dataset Table */
+        .dataset-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .dataset-table th,
+        .dataset-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .dataset-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        .dataset-table .available {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .dataset-table .upcoming {
+            color: #6c757d;
+        }
+        
+        /* Code Block */
+        pre {
+            background: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             font-size: 0.9rem;
-            margin-bottom: 5px;
         }
         
-        .prize-amount {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #6B46C1 0%, #0EA5E9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 5px;
         }
         
-        /* Task Flow */
-        .task-flow {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 50px;
-            margin: 50px 0;
+        .btn-primary {
+            background: #667eea;
+            color: white;
         }
         
-        .task-flow-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 40px;
-            margin-top: 30px;
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
         }
         
-        .task-box {
+        .btn-secondary {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            color: #667eea;
+            border: 2px solid #667eea;
         }
         
-        .task-box h3 {
-            color: #6B46C1;
+        .btn-secondary:hover {
+            background: #f6f8fa;
+        }
+        
+        /* Leaderboard */
+        .leaderboard-section {
+            margin-top: 40px;
+        }
+        
+        .phase-tabs {
+            display: flex;
+            border-bottom: 2px solid #e1e4e8;
             margin-bottom: 20px;
-            font-size: 1.3rem;
         }
         
-        .arrow {
-            font-size: 2rem;
-            color: #6B46C1;
+        .phase-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #586069;
+            transition: all 0.3s;
+        }
+        
+        .phase-tab.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        
+        .leaderboard-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        .leaderboard-table tr:hover {
+            background: #f6f8fa;
+        }
+        
+        .rank-1 { color: #FFD700; font-weight: bold; }
+        .rank-2 { color: #C0C0C0; font-weight: bold; }
+        .rank-3 { color: #CD7F32; font-weight: bold; }
+        
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f6f8fa;
+            border-radius: 6px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: #586069;
+            line-height: 1.8;
+        }
+        
+        .faq-answer ul {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        
+        .faq-answer li {
+            margin: 8px 0;
+        }
+        
+        /* Citation */
+        .citation-box {
+            background: #f6f8fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        /* Sponsor */
+        .sponsor-content {
+            text-align: center;
+            padding: 30px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .sponsor-content p {
+            margin: 15px 0;
+            line-height: 1.8;
         }
         
         /* Footer */
-        .footer {
-            background: #1a1a1a;
+        footer {
+            background: #2c3e50;
             color: white;
-            padding: 60px 20px 30px;
             text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
         }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: #0EA5E9;
-        }
-        
-        .footer-section a {
-            color: #999;
+        footer a {
+            color: #a8b3c5;
             text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s;
         }
         
-        .footer-section a:hover {
-            color: #0EA5E9;
-        }
-        
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
+        footer a:hover {
+            color: white;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
-            .timeline::before {
-                left: 30px;
+            .section {
+                padding: 20px;
             }
             
-            .timeline-content {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
+            .header-icons-container {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .timeline-dot {
-                left: 30px;
+            .icon-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
-            .task-flow-grid {
-                grid-template-columns: 1fr;
+            table {
+                font-size: 0.9rem;
             }
-            
-            .arrow {
-                transform: rotate(90deg);
-            }
-        }
-        
-        /* Announcement Banner */
-        .announcement {
-            background: #FEF3C7;
-            border-left: 4px solid #F59E0B;
-            padding: 15px 20px;
-            margin: 30px 0;
-            border-radius: 5px;
-        }
-        
-        .announcement strong {
-            color: #92400E;
-        }
-        
-        /* Feature List */
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: start;
-            gap: 15px;
-        }
-        
-        .feature-icon {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #6B46C1 0%, #0EA5E9 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .feature-text h4 {
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        .feature-text p {
-            color: #666;
-            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
+    <!-- Header with Icons -->
+    <div class="header-icons">
+        <div class="header-icons-container">
+            <div class="site-title">LA-Bench 2025</div>
+            <div class="icon-links">
+                <a href="https://github.com/lasa-or-jp/la-bench" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb" target="_blank">
+                    <i class="fab fa-google"></i> Colab
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" target="_blank">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+                <a href="https://lasa.or.jp/" target="_blank">
+                    <i class="fas fa-building"></i> LASA
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-content">
             <h1>LA-Bench 2025</h1>
             <p class="subtitle">実験手順生成AIコンペティション</p>
-            <p class="subtitle">Laboratory Automation Benchmark</p>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-number">50万円</span>
-                    <span class="hero-stat-label">総賞金</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">30件</span>
-                    <span class="hero-stat-label">データセット</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">2段階</span>
-                    <span class="hero-stat-label">評価フェーズ</span>
-                </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <a href="https://github.com/lasa-or-jp/la-bench" class="btn btn-primary">
-                    📂 GitHub
-                </a>
-                <a href="#timeline" class="btn btn-secondary">
-                    📅 スケジュール
-                </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" class="btn btn-secondary">
-                    ✉️ お問い合わせ
-                </a>
+            <p>実験指示から実行可能な実験手順を自動生成するAIの能力を競う</p>
+            <div class="prize-banner">
+                <i class="fas fa-trophy"></i> 総賞金 50万円
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
+    <!-- Main Content -->
     <div class="container">
-        <section class="section">
-            <h2>🧬 コンペティション概要</h2>
-            <p class="section-subtitle">
-                実験指示から実行可能な実験手順を自動生成するAIの能力を競います
-            </p>
+        <!-- Overview -->
+        <div class="section">
+            <h2><i class="fas fa-info-circle"></i> 概要</h2>
+            <p>LA-Bench 2025は、ラボラトリーオートメーション協会（LASA）が主催する、実験手順生成タスクのためのベンチマークコンペティションです。</p>
+            <p>参加者は、自然言語で記述された実験指示を入力として受け取り、実行可能な詳細な実験手順を生成するAIシステムを開発します。</p>
             
-            <div class="announcement">
-                <strong>🎯 チャレンジ</strong>: 
-                「T75フラスコ2本の線維芽細胞の培地交換」のような実験指示から、
-                具体的な手順・材料・時間を含む実行可能な実験手順を生成
+            <h3>主な特徴</h3>
+            <ul>
+                <li>実験手順生成に特化した日本初の大規模コンペティション</li>
+                <li>実際の研究現場で使用される実験プロトコルに基づいたデータセット</li>
+                <li>Google Colaboratoryで簡単に参加可能</li>
+                <li>人工知能学会全国大会での発表機会</li>
+            </ul>
+        </div>
+
+        <!-- Schedule -->
+        <div class="section">
+            <h2><i class="fas fa-calendar-alt"></i> スケジュール</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>日付</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025年9月1日</td>
+                        <td>公式サイト公開・参加登録開始<br>ルール、Example Dataset、サンプルコード公開</td>
+                    </tr>
+                    <tr>
+                        <td>2025年10月10日</td>
+                        <td>Public Test Dataset公開</td>
+                    </tr>
+                    <tr>
+                        <td>2025年11月13日</td>
+                        <td>Private Test Dataset公開</td>
+                    </tr>
+                    <tr>
+                        <td>2025年11月20日</td>
+                        <td>提出締切</td>
+                    </tr>
+                    <tr>
+                        <td>2025年12月20日</td>
+                        <td>結果公開</td>
+                    </tr>
+                    <tr>
+                        <td>2026年2月1日</td>
+                        <td>人工知能学会 全国大会 予稿提出締切</td>
+                    </tr>
+                    <tr>
+                        <td>2026年5月</td>
+                        <td>人工知能学会 全国大会にて表彰・発表</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Dataset -->
+        <div class="section">
+            <h2><i class="fas fa-database"></i> データセット</h2>
+            <table class="dataset-table">
+                <thead>
+                    <tr>
+                        <th>Dataset</th>
+                        <th>サイズ</th>
+                        <th>用途</th>
+                        <th>公開日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Example</td>
+                        <td>10</td>
+                        <td>Development Phase</td>
+                        <td class="upcoming">2025年9月1日</td>
+                    </tr>
+                    <tr>
+                        <td>Public Test</td>
+                        <td>10</td>
+                        <td>Development Phase</td>
+                        <td class="upcoming">2025年10月10日</td>
+                    </tr>
+                    <tr>
+                        <td>Private Test</td>
+                        <td>10</td>
+                        <td>Test Phase</td>
+                        <td class="upcoming">2025年11月13日</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>データフォーマット</h3>
+            <h4>入力フォーマット (YAML)</h4>
+            <pre><code>experiment_id: "exp_001"
+instruction: "T75フラスコ2本の線維芽細胞の培地交換をする"
+protocols:
+  - 準備するもの:
+    - DMEM + 10% FBS培地
+    - 70%エタノール
+  - 手順:
+    - 培地を37℃に温める
+    - 古い培地を除去する
+final_state:
+  - 得られるもの: "培地交換済みのT75フラスコ2本"
+  - 状態: "細胞は新しい培地中で培養継続"</code></pre>
+
+            <h4>出力フォーマット (YAML)</h4>
+            <pre><code>experiment_id: "exp_001"
+procedure:
+  - step: 1
+    action: "準備"
+    details:
+      - "クリーンベンチを70%エタノールで清拭する"
+      - "培地DMEM + 10% FBSを37℃に温める"
+    materials:
+      - name: "70%エタノール"
+        amount: "適量"
+    equipment:
+      - "クリーンベンチ"
+    duration: "10分"</code></pre>
+        </div>
+
+        <!-- Evaluation -->
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> 評価メトリクス</h2>
+            <p>評価メトリクスは現在調整中です。決定次第、詳細を公開いたします。</p>
+            <p>評価においては、生成された実験手順の正確性、論理的整合性、網羅性、実行可能性などを総合的に判断する予定です。</p>
+        </div>
+
+        <!-- Submission -->
+        <div class="section">
+            <h2><i class="fas fa-upload"></i> 提出方法</h2>
+            <p>提出には以下が必要です：</p>
+            <ol>
+                <li><strong>predictions.yaml</strong> - 全ての予測結果</li>
+                <li><strong>notebook.ipynb</strong> - Google Colabノートブック</li>
+                <li><strong>README.md</strong> - 手法の説明</li>
+            </ol>
+            <p>提出方法の詳細は現在準備中です。決定次第、公開いたします。</p>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="section">
+            <h2><i class="fas fa-trophy"></i> リーダーボード</h2>
+            <div class="leaderboard-section">
+                <div class="phase-tabs">
+                    <div class="phase-tab active" onclick="showPhase('development')">Development Phase</div>
+                    <div class="phase-tab" onclick="showPhase('test')">Test Phase</div>
+                </div>
+                
+                <div id="development-phase" class="phase-content">
+                    <p style="text-align: center; color: #666; padding: 40px;">
+                        コンペティション開始後に順位が表示されます
+                    </p>
+                </div>
+                
+                <div id="test-phase" class="phase-content" style="display: none;">
+                    <p style="text-align: center; color: #666; padding: 40px;">
+                        2025年11月13日以降に順位が表示されます
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="section">
+            <h2><i class="fas fa-question-circle"></i> よくある質問</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 応募に必要な条件はありますか？</div>
+                <div class="faq-answer">
+                    <p>以下の条件を満たす必要があります：</p>
+                    <ul>
+                        <li><strong>コード提出義務</strong>：参加チームは、Google ColabノートブックおよびREADMEの提出が必須となります。</li>
+                        <li><strong>発表義務</strong>：受賞チームは、本コンペティションへの取り組みを人工知能学会全国大会にて発表していただきます。</li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-icon">1</div>
-                    <div class="feature-text">
-                        <h4>実践的なタスク</h4>
-                        <p>実際の研究現場で必要とされる実験手順の生成</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">2</div>
-                    <div class="feature-text">
-                        <h4>2段階評価</h4>
-                        <p>LLM評価と専門家評価による多角的な評価</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">3</div>
-                    <div class="feature-text">
-                        <h4>オープンソース</h4>
-                        <p>データセット・評価コードを公開</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">4</div>
-                    <div class="feature-text">
-                        <h4>学会発表機会</h4>
-                        <p>受賞者は人工知能学会全国大会で発表</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: チーム参加は可能ですか？</div>
+                <div class="faq-answer">
+                    <p>はい、チームでの参加が可能です。ただし、受賞時の発表は代表者が行う必要があります。</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Task Flow -->
-        <section class="section">
-            <h2>📝 タスク詳細</h2>
-            <div class="task-flow">
-                <div class="task-flow-grid">
-                    <div class="task-box">
-                        <h3>入力</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li>📌 実験指示</li>
-                            <li>📋 プロトコル（準備・手順）</li>
-                            <li>🎯 最終状態</li>
-                        </ul>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="task-box">
-                        <h3>出力</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li>✅ 具体的な手順</li>
-                            <li>🧪 必要な材料・量</li>
-                            <li>⏱️ 各ステップの時間</li>
-                            <li>⚠️ 安全上の注意</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section class="section" id="timeline">
-            <h2>📅 スケジュール</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025年9月1日</div>
-                        <div>コンペティション開始</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025年10月10日</div>
-                        <div>Public Test Dataset 公開</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025年11月13日</div>
-                        <div>Private Test Dataset 公開</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025年11月20日</div>
-                        <div>提出締切</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025年12月20日</div>
-                        <div>結果発表</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2026年5月</div>
-                        <div>人工知能学会全国大会 表彰式</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Prizes -->
-        <section class="section">
-            <h2>🏆 賞金</h2>
-            <p class="section-subtitle">総額50万円の賞金を用意</p>
-            <div class="prize-container">
-                <div class="prize-card">
-                    <h3 class="prize-title">LLM評価部門</h3>
-                    <div class="prize-item">
-                        <p class="prize-label">最優秀賞</p>
-                        <p class="prize-amount">20万円</p>
-                    </div>
-                    <div class="prize-item">
-                        <p class="prize-label">優秀賞</p>
-                        <p class="prize-amount">5万円</p>
-                    </div>
-                </div>
-                <div class="prize-card">
-                    <h3 class="prize-title">専門家評価部門</h3>
-                    <div class="prize-item">
-                        <p class="prize-label">最優秀賞</p>
-                        <p class="prize-amount">20万円</p>
-                    </div>
-                    <div class="prize-item">
-                        <p class="prize-label">優秀賞</p>
-                        <p class="prize-amount">5万円</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            
+        </div>
 
         <!-- Sponsors -->
-        <section class="section">
-            <h2>🤝 スポンサー募集</h2>
-            <p class="section-subtitle">
-                科学実験自動化の発展に賛同いただける企業・団体様を募集しています
-            </p>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" class="btn btn-primary" style="background: linear-gradient(135deg, #6B46C1 0%, #0EA5E9 100%); color: white;">
-                    スポンサーお問い合わせ
+        <div class="section">
+            <h2><i class="fas fa-handshake"></i> スポンサー</h2>
+            <div class="sponsor-content">
+                <p>LA-Bench 2025の運営費および賞金の充実のため、スポンサーを募集しています。</p>
+                <p>ご支援いただいた企業・団体様のロゴを本サイトに掲載させていただきます。</p>
+                <p>詳細については<a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" target="_blank">お問い合わせフォーム</a>よりご連絡ください。</p>
+            </div>
+        </div>
+
+        <!-- Citation -->
+        <div class="section">
+            <h2><i class="fas fa-quote-left"></i> 引用</h2>
+            <p>本データセットを研究で使用される場合は、以下の形式で引用してください：</p>
+            <div class="citation-box">
+                <pre><code>@misc{labench2025,
+  title={LA-Bench: Laboratory Automation Benchmark},
+  author={Laboratory Automation Society of Japan},
+  year={2025},
+  howpublished={\url{https://github.com/lasa-or-jp/la-bench}}
+}</code></pre>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="section">
+            <h2><i class="fas fa-rocket"></i> クイックスタート</h2>
+            <p>Google Colabで即座にベースラインを実行できます：</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://colab.research.google.com/github/lasa-or-jp/la-bench/blob/main/notebooks/baseline.ipynb" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-google"></i> Google Colabで開く
+                </a>
+                <a href="https://github.com/lasa-or-jp/la-bench" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> GitHubリポジトリ
                 </a>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>リンク</h3>
-                    <a href="https://github.com/lasa-or-jp/la-bench">GitHub リポジトリ</a>
-                    <a href="https://github.com/lasa-or-jp/la-bench/tree/main/data/example">サンプルデータ</a>
-                    <a href="https://github.com/lasa-or-jp/la-bench/blob/main/docs/submission-guide.md">提出ガイド</a>
-                </div>
-                <div class="footer-section">
-                    <h3>主催・支援</h3>
-                    <a href="https://lasa.or.jp">ラボラトリーオートメーション協会</a>
-                    <a href="https://www.ai-gakkai.or.jp/">人工知能学会</a>
-                </div>
-                <div class="footer-section">
-                    <h3>お問い合わせ</h3>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform">問い合わせフォーム</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 LA-Bench. All rights reserved. | MIT License</p>
-            </div>
-        </div>
+    <footer>
+        <p><strong>主催</strong>: 一般社団法人 ラボラトリーオートメーション協会</p>
+        <p><strong>支援</strong>: 一般社団法人 人工知能学会</p>
+        <p style="margin-top: 20px;">
+            <a href="https://github.com/lasa-or-jp/la-bench">GitHub</a> | 
+            <a href="https://lasa.or.jp/">LASA</a> | 
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform">お問い合わせ</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+            © 2025 Laboratory Automation Society of Japan. All rights reserved.
+        </p>
     </footer>
+
+    <script>
+        function showPhase(phase) {
+            // Update tab active state
+            document.querySelectorAll('.phase-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide content
+            document.getElementById('development-phase').style.display = phase === 'development' ? 'block' : 'none';
+            document.getElementById('test-phase').style.display = phase === 'test' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>

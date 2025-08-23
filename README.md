@@ -24,6 +24,9 @@ ls data/example/
 
 # ベースラインの実行
 python code/baseline/run_baseline.py --input data/example/input.yaml
+
+# サンプルコードの実行（Google Colab）
+# https://colab.research.google.com/drive/1UYn6NQnXS5v2xyTUUlwFQGpIn8eTC-DQ?usp=sharing
 ```
 
 ## 📊 Dataset
@@ -139,6 +142,10 @@ scores = evaluator.evaluate(predictions, dataset.ground_truth)
 
 **主催**: 一般社団法人 ラボラトリーオートメーション協会
 **支援**: 一般社団法人 人工知能学会
+
+## 🔒 セキュリティポリシー
+
+**重要**: データセット構築に関する詳細な議論は、情報漏洩を防ぐため、GitHubではなくDiscordで運営メンバーのみで行われます。GitHubのissueやPRには、公開可能な情報のみを記載してください。
 
 ## 📜 License
 

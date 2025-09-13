@@ -213,11 +213,4 @@ LA-Bench 2025の運営費および賞金の充実のため、スポンサーを�
 
 ## 🤝 引用
 
-```bibtex
-@misc{labench2025,
-  title={LA-Bench: Laboratory Automation Benchmark},
-  author={Laboratory Automation Society of Japan},
-  year={2025},
-  howpublished={\url{https://github.com/lasa-or-jp/la-bench}}
-}
-```
+本データセットを研究で使用される場合の引用方法については、論文公開後にこちらに記載いたします。

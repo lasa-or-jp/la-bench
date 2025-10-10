@@ -47,7 +47,7 @@
       "陰性コントロール 2.5µLが添加された検査チューブ"
     ],
     "references": [
-      "https://www.nippongene.com/kensa/products/tds/NE0121_Manual.pdf"
+      {"id": 1, "text": "https://www.nippongene.com/kensa/products/tds/NE0121_Manual.pdf"}
     ]
   },
   "output": {

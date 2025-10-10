@@ -25,8 +25,8 @@
       "線維芽細胞が6000 cell/cm^2で播種されたT25フラスコ"
     ],
     "references": [
-      "Thermo Fisher Scientific. (n.d.). Human dermal fibroblasts, neonatal: Product information sheet (Manual No. MAN0001597). https://assets.thermofisher.com/TFS-Assets/LSG/manuals/MAN0001597_HDFn_PI_.pdf",
-      "Lonza. (n.d.). Tech Tip No. 5: 接着細胞型 — セットアップ／ 解凍／播種／増殖（PDF形式） (Tech Tip テクニカル資料 No. 5). https://www.lonzabio.jp/tech/pdf/tech_5.pdf"
+      {"id": 1, "text": "Thermo Fisher Scientific. (n.d.). Human dermal fibroblasts, neonatal: Product information sheet (Manual No. MAN0001597). https://assets.thermofisher.com/TFS-Assets/LSG/manuals/MAN0001597_HDFn_PI_.pdf"},
+      {"id": 2, "text": "Lonza. (n.d.). Tech Tip No. 5: 接着細胞型 — セットアップ／ 解凍／播種／増殖（PDF形式） (Tech Tip テクニカル資料 No. 5). https://www.lonzabio.jp/tech/pdf/tech_5.pdf"}
     ]
   },
   "output": {

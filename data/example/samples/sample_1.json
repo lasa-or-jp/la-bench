@@ -36,10 +36,10 @@
       "EcoRIとXhoIで制限酵素処理し、精製・定量された線形化ベクター(pET-21b由来)が冷凍保存されている。"
     ],
     "references": [
-      "pET-21b(+) https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-21b(%2B)",
-      "主要制限酵素 Double Digestion用推奨Universal Buffer https://catalog.takara-bio.co.jp/PDFS/double_digestion.pdf",
-      "TOYOBO KOD -Plus- Neo 取扱説明書 https://lifescience.toyobo.co.jp/user_data/pdf/products/manual/KOD-401.pdf",
-      "PCR産物の精製・アガロースゲルからのDNA抽出プロトコール（NucleoSpin® Gel and PCR Clean-up） https://catalog.takara-bio.co.jp/com/tech_info_detail.php?mode=2&masterid=M100005218"
+      {"id": 1, "text": "pET-21b(+) https://www.snapgene.com/plasmids/pet_and_duet_vectors_(novagen)/pET-21b(%2B)"},
+      {"id": 2, "text": "主要制限酵素 Double Digestion用推奨Universal Buffer https://catalog.takara-bio.co.jp/PDFS/double_digestion.pdf"},
+      {"id": 3, "text": "TOYOBO KOD -Plus- Neo 取扱説明書 https://lifescience.toyobo.co.jp/user_data/pdf/products/manual/KOD-401.pdf"},
+      {"id": 4, "text": "PCR産物の精製・アガロースゲルからのDNA抽出プロトコール（NucleoSpin® Gel and PCR Clean-up） https://catalog.takara-bio.co.jp/com/tech_info_detail.php?mode=2&masterid=M100005218"}
     ]
   },
   "output": {

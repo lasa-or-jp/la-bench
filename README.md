@@ -220,7 +220,8 @@ la-bench/
 LA-Bench 2025の運営費および賞金の充実のため、スポンサーを募集しています。
 ご支援いただいた企業・団体様のロゴを本サイトに掲載させていただきます。
 
-詳細については[お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)よりご連絡ください。
+- 📄 [スポンサー募集のご案内](https://drive.google.com/file/d/1TjXRgEloQAcw4fOTdNkzdZeJCTP7NG_3/view)
+- 📝 [スポンサー申し込みフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdzlgiq2qmHAbJuLuFg8WAUeBvJUDcnu9waQBaqAlihS8f6RQ/viewform)
 
 ## 📜 ライセンス
 

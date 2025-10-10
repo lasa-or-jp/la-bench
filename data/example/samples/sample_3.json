@@ -28,7 +28,7 @@
       "ナイロンフィラメントがラベル付きチューブに保管されている。"
     ],
     "references": [
-      "https://apec.aichi-c.ed.jp/kyouka/rika/kagaku/2018/koubunshi/66nairon/66nairon.htm?utm_source=chatgpt.com"
+      {"id": 1, "text": "https://apec.aichi-c.ed.jp/kyouka/rika/kagaku/2018/koubunshi/66nairon/66nairon.htm"}
     ]
   },
   "output": {

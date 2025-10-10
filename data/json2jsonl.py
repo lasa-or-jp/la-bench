@@ -15,6 +15,47 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from typing import Any
+
+REQUIRED_TOP_LEVEL = {"input", "output"}
+REQUIRED_INPUT_FIELDS = {
+    "instruction",
+    "mandatory_objects",
+    "source_protocol_steps",
+    "expected_final_states",
+    "references",
+}
+
+
+def _fail(source: Path, message: str) -> ValueError:
+    return ValueError(f"{source}: {message}")
+
+
+def validate_sample(sample: dict[str, Any], source: Path) -> None:
+    if not isinstance(sample, dict):
+        raise _fail(source, "Top-level JSON value must be an object.")
+
+    missing_top = REQUIRED_TOP_LEVEL - sample.keys()
+    if missing_top:
+        raise _fail(
+            source, f"Missing required top-level keys: {sorted(missing_top)}."
+        )
+
+    input_section = sample["input"]
+    if not isinstance(input_section, dict):
+        raise _fail(source, "`input` must be an object.")
+
+    missing_input = REQUIRED_INPUT_FIELDS - input_section.keys()
+    if missing_input:
+        raise _fail(
+            source, f"Missing required input fields: {sorted(missing_input)}."
+        )
+
+    output_section = sample["output"]
+    if not isinstance(output_section, dict):
+        raise _fail(source, "`output` must be an object.")
+    if "procedure_steps" not in output_section:
+        raise _fail(source, "Missing required key `output.procedure_steps`.")
 
 
 def merge_json_to_jsonl(samples_dir: Path, output_path: Path) -> int:
@@ -31,7 +72,13 @@ def merge_json_to_jsonl(samples_dir: Path, output_path: Path) -> int:
     with output_path.open("w", encoding="utf-8") as out:
         for fp in files:
             with fp.open("r", encoding="utf-8") as f:
-                obj = json.load(f)
+                try:
+                    obj = json.load(f)
+                except json.JSONDecodeError as exc:
+                    raise ValueError(
+                        f"Failed to parse JSON file {fp}: {exc}"
+                    ) from exc
+            validate_sample(obj, fp)
             line = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
             out.write(line + "\n")
             count += 1

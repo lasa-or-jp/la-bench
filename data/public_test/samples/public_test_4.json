@@ -1,0 +1,47 @@
+{
+  "id": "public_test_4",
+  "input": {
+    "instruction": "あらかじめ摘出されているマウス脾臓から組織サンプル100 mgを切除し、RNAが分解しないよう安定化させて–80 °Cで保存せよ。",
+    "mandatory_objects": [
+      "RNAlater RNA Stabilization Reagent",
+      "恒温振盪機",
+      "2 mLマイクロチューブ ×2",
+      "P1000マイクロピペット",
+      "1000 μL チップ",
+      "冷凍庫（–80 °Cに設定されている）",
+      "ピンセット"
+    ],
+    "source_protocol_steps": [
+      { "id": 1, "text": "RNAlater RNA Stabilization Reagent は、室温(15 °C~ 25 °C)以下で保存すると沈澱を形成することがあるため、使用直前に37 °Cで振盪して沈澱を溶解させる。"},
+      { "id": 2, "text": "組織サンプルを保存するために必要なRNAlater RNA Stabilization Reagentの適切な量を決定する。少なくとも、組織サンプルの10倍の試薬（あるいは組織1 mgに対して約10 μL）が必要である。正確な量の試薬をマイクロピペットで適切な収集容器に入れる。" },
+      { "id": 3, "text": "動物から組織サンプルを切除し、必要なら0.5 cm以下の厚さにカットする。このステップはできるだけ迅速に行ない、直ちにステップ4に進む。" },
+      { "id": 4, "text": "RNAlater RNA Stabilization Reagentが入った収集容器(ステップ2)に組織片を完全に沈める。" },
+      { "id": 5, "text": "まず試薬中の組織を2 °C~ 8 °Cで一晩インキュベートする。その後、組織を試薬から取り出し、–80 °Cで保存する。" }
+    ],
+    "expected_final_states": [
+      "収集容器内で試薬に浸された組織サンプルが–80 °Cで保存されている。"
+    ],
+    "references": [
+      { "id": 1, "text": "https://www.qiagen.com/us/resources/download.aspx?id=cfcea546-c447-473c-b438-13ca55136781&lang=ja-JP" }
+    ]
+  },
+  "output": {
+    "procedure_steps": [
+      { "id": 1, "text": "恒温振盪機を37 °Cに設定しておく。" },
+      { "id": 2, "text": "RNAlater RNA Stabilization Reagentを使用直前に恒温振盪機にて37 °Cで振盪して沈澱を溶解させる。" },
+      { "id": 3, "text": "RNAlater RNA Stabilization Reagent 1000 μL をP1000マイクロピペットで2 mLマイクロチューブに分注する。" },
+      { "id": 4, "text": "マウス脾臓から組織サンプル100 mgを切除し、必要なら0.5 cm以下の厚さにカットする。" },
+      { "id": 5, "text": "2 mLマイクロチューブに組織片を完全に沈める。" },
+      { "id": 6, "text": "試薬中の組織サンプルを 2 °C~ 8 °Cで一晩インキュベートする。" },
+      { "id": 7, "text": "2 mLマイクロチューブから組織サンプルを取り出し、新しい2 mLマイクロチューブに入れる。このマイクロチューブを冷凍庫で–80 °Cで保存する。" }
+    ]
+  },
+  "measurement": {
+    "specific_criteria": [
+      { "item": "恒温振盪機を37 °Cに設定しておく。", "score": 1 },
+      { "item": "収集容器として2 mLマイクロチューブを使用する。", "score": 1 },
+      { "item": "–80 °Cで保存する前に新しいマイクロチューブに組織サンプルを入れる。", "score": 1 },
+      { "item": "最後に冷凍庫に入れる。", "score": 2 }
+    ]
+  }
+}

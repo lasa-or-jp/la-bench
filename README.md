@@ -36,7 +36,7 @@
 | `mandatory_objects` | 使用する物品 | list[str] | 使用する物品（機器、ラボウェア、サンプルなど）<br>**記載内容**:<br>- `procedure_steps`で必ず使用する物品を列挙 |
 | `source_protocol_steps` | 元プロトコルの手順 | list[dict] | 参考となる元の実験手順<br>- `id`: int - ステップ番号<br>- `text`: str - 手順内容 |
 | `expected_final_states` | 期待される最終状態 | list[str] | 最終的に得られるサンプルや重要な中間生成物とその状態<br>**記載内容**:<br>- 最終的に得られるサンプル（生成物）<br>- 重要な中間生成物とその状態 |
-| `references` | 参考文献 | list[str] | 関連する論文や資料のURL |
+| `references` | 参考文献 | list[dict] | 関連する論文や資料のURL<br>- `id`: int - 参考文献番号<br>- `text`: str - 参考文献情報 |
 
 ### 出力 (Output)
 

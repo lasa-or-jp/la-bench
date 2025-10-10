@@ -1,5 +1,5 @@
 {
-  "sample_id": "sample_1",
+  "id": "sample_1",
   "input": {
     "instruction": "大腸菌K12の機能未知遺伝子yexP (3 kbp)をゲノムから増幅し、発現用ベクター構築のための増幅断片と、挿入先の線形化ベクターを用意してほしい。発現用ベクターの親ベクターはpET21b(C末His-tag)[出典1]、制限酵素ペアはEcoRIとXhoI[出典2]を使い、PCRの酵素はKOD Plus neo[出典3]を用いること。",
     "mandatory_objects": [

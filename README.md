@@ -60,12 +60,14 @@
 - 暗黙知や省略が埋められている
 - すべての条件が明示化されている
 - 不完全な記述が完成されている
+- 実行時に使用される具体的な数値が計算されている
+- 操作対象や器具、装置など対象物が明示化されている
 
 **例：水に砂糖を溶かす場合**
 
 ❌ **不十分な実験手順**
 1. コップに水を入れる
-2. 砂糖を加える
+2. 10%になるよう砂糖を加える
 3. かき混ぜる
 
 ✅ **期待される実験手順**
@@ -218,7 +220,8 @@ la-bench/
 LA-Bench 2025の運営費および賞金の充実のため、スポンサーを募集しています。
 ご支援いただいた企業・団体様のロゴを本サイトに掲載させていただきます。
 
-詳細については[お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)よりご連絡ください。
+- 📄 [スポンサー募集のご案内](https://drive.google.com/file/d/1TjXRgEloQAcw4fOTdNkzdZeJCTP7NG_3/view)
+- 📝 [スポンサー申し込みフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdzlgiq2qmHAbJuLuFg8WAUeBvJUDcnu9waQBaqAlihS8f6RQ/viewform)
 
 ## 📜 ライセンス
 

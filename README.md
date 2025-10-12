@@ -223,6 +223,11 @@ LA-Bench 2025の運営費および賞金の充実のため、スポンサーを�
 - 📄 [スポンサー募集のご案内](https://drive.google.com/file/d/1TjXRgEloQAcw4fOTdNkzdZeJCTP7NG_3/view)
 - 📝 [スポンサー申し込みフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdzlgiq2qmHAbJuLuFg8WAUeBvJUDcnu9waQBaqAlihS8f6RQ/viewform)
 
+## 📘 更新履歴
+
+- 2025-10-13: Public Test 6のサンプルのバッファ配合を更新。
+- 2025-10-11: Private Test向けJSONLローダーの利用手順を整備。
+
 ## 📜 ライセンス
 
 本プロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](LICENSE)ファイルをご参照ください。

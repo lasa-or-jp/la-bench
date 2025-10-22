@@ -54,8 +54,8 @@
   "output": {
     "procedure_steps": [
       {"id": 1, "text": "【試薬展開】100 mM DTT、100 mM スペルミジン、100 mM ATP、20 mg/mL アルブミン、5 U/µL E. coli DNA gyrase、リラックス化pBR322 (1 µg/µL)、10× GSTEBを氷上で溶解する。"},
-      {"id": 2, "text": "【Reaction Buffer調製】氷上で1.5 mLチューブに以下を加え、ピペッティングで混合して5× Reaction Buffer 500 µLを調製する：1 M Tris-HCl (pH 7.5) 87.5 µL、1 M KCl 60 µL、500 mM MgCl₂ 20 µL、100 mM DTT 50 µL、100 mM スペルミジン 45 µL、100 mM ATP 25 µL、グリセロール 162.5 µL、20 mg/mL アルブミン 12.5 µL、超純水 37.5 µL。"},
-      {"id": 3, "text": "【Dilution Buffer調製】氷上で以下を混合し、1× Dilution Buffer 500 µLを調製する：1 M Tris-HCl (pH 7.5) 25 µL、1 M KCl 50 µL、100 mM DTT 10 µL、500 mM EDTA 1 µL、グリセロール 250 µL、超純水 164 µL。"},
+      {"id": 2, "text": "【Reaction Buffer調製】氷上で1.5 mLチューブに以下を加え、ピペッティングで混合して5× Reaction Buffer 500 µLを調製する：1 M Tris-HCl (pH 7.5) 87.5 µL、1 M KCl 60 µL、500 mM MgCl₂ 20 µL、100 mM DTT 50 µL、100 mM スペルミジン 45 µL、100 mM ATP 25 µL、グリセロール 129 µL、20 mg/mL アルブミン 12.5 µL、超純水 71 µL。"},
+      {"id": 3, "text": "【Dilution Buffer調製】氷上で以下を混合し、1× Dilution Buffer 500 µLを調製する：1 M Tris-HCl (pH 7.5) 25 µL、1 M KCl 50 µL、100 mM DTT 10 µL、500 mM EDTA 1 µL、グリセロール 198 µL、超純水 216 µL。"},
       {"id": 4, "text": "【酵素希釈系列①】Dilution BufferとDNA gyraseを以下の分量ずつ混合し希釈系列を作成する：10 µL : 2 µL (1/6)、13.5 µL : 1.5 µL (1/10)、11 µL : 1 µL (1/12)、14 µL : 1 µL (1/15)。"},
       {"id": 5, "text": "【酵素希釈系列②】前項で得た酵素希釈溶液をさらにDilution Bufferで希釈し、1/20および1/30系列を調製する（Dilution Buffer 5 µL + 1/10酵素 5 µL、およびDilution Buffer 5 µL + 1/15酵素 5 µL）。"},
       {"id": 6, "text": "【酵素希釈系列③】Dilution Buffer 9 µL + 手順5で調製した希釈酵素 1 µLで希釈し、1/60, 1/100, 1/120, 1/150, 1/200, 1/300系列をそれぞれ作成する。さらに1/60溶液1 µL + Dilution Buffer 9 µLで1/600溶液を得る。"},

@@ -13,9 +13,8 @@ LA-Bench 2025にご参加いただき、誠にありがとうございます。
 **1人の参加者が複数のチームに所属することを禁止**いたします。
 
 - 個人チームとして登録しつつ、別のチームにメンバーとして参加することはできません
-- 既に複数チームに登録されている場合は、**2025年11月1日までに**以下のいずれかの対応をお願いいたします：
-  - 1つのチームを選択し、他のチームから脱退する
-  - チームを統合する（ご希望の場合は[お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)よりご連絡ください）
+- 既に複数チームに登録されている場合は、**2025年11月1日までに**以下のフォームからチームを統合する旨をご連絡ください
+  - [お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform)
 
 ### 2. コラボレーションとディスカッションのルール
 
@@ -47,7 +46,7 @@ LA-Bench 2025にご参加いただき、誠にありがとうございます。
 
 ## 詳細な参加規約
 
-詳細な参加規約は、[公式サイトの参加規約セクション](https://lasa-or-jp.github.io/la-bench/#参加規約)をご確認ください。
+詳細な参加規約は、[公式サイトの参加規約セクション](https://lasa-or-jp.github.io/la-bench/)をご確認ください。
 
 ## お問い合わせ
 

@@ -579,17 +579,24 @@
             <ul>
                 <li><strong>練習用データ</strong>: Example Dataset（練習用、評価対象外）</li>
                 <li><strong>評価対象データ</strong>: Public Test Dataset</li>
-                <li><strong>提出内容</strong>: Public Test Datasetの処理結果</li>
+                <li><strong>提出内容</strong>: 予測結果ファイル（JSONL形式）</li>
+                <li><strong>提出回数</strong>: 1日あたり5回まで</li>
                 <li><strong>評価方法</strong>: LLM評価</li>
                 <li><strong>結果公開</strong>: リーダーボードに即時反映</li>
             </ul>
-            
+
             <h3>Test Phase（テストフェーズ）</h3>
             <ul>
                 <li><strong>評価対象データ</strong>: Private Test Dataset</li>
-                <li><strong>提出内容</strong>: Private Test Datasetの処理結果</li>
+                <li><strong>提出内容</strong>:
+                    <ul>
+                        <li>予測結果ファイル（JSONL形式）</li>
+                        <li>実行コード（必須）</li>
+                        <li>README（必須）</li>
+                    </ul>
+                </li>
                 <li><strong>提出回数</strong>: 1回限り</li>
-                <li><strong>提出期限</strong>: データ公開から7日以内</li>
+                <li><strong>提出期限</strong>: データ公開から7日以内（2025年11月20日）</li>
                 <li><strong>評価方法</strong>:
                     <ul>
                         <li>第1次評価: LLM評価（全チーム対象）</li>
@@ -597,6 +604,15 @@
                     </ul>
                 </li>
             </ul>
+
+            <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <p style="margin: 0;"><strong>📝 提出物に関する注意</strong></p>
+                <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                    <li>Development Phase: 予測結果ファイルのみ提出</li>
+                    <li>Test Phase: 予測結果ファイル + 実行コード + READMEを提出</li>
+                    <li>Test Phaseで実行コードとREADMEの提出がない場合、評価対象外となります</li>
+                </ul>
+            </div>
             
             <h3>評価メトリクス</h3>
             <p>評価は<strong>共通採点基準（5点満点）</strong>と<strong>個別採点基準（5点満点）</strong>の合計10点満点で行われます。</p>
@@ -608,34 +624,115 @@
             </div>
         </div>
 
+        <!-- Participation Rules -->
+        <div class="section">
+            <h2><i class="fas fa-gavel"></i> 参加規約</h2>
+
+            <h3>1. 参加資格</h3>
+            <ul>
+                <li>個人またはチームでの参加が可能です</li>
+                <li><strong>コード提出義務</strong>：Test Phaseの提出時には、実行コードおよびREADMEの提出が必須となります</li>
+                <li><strong>発表義務</strong>：受賞チームは、本コンペティションへの取り組みを人工知能学会全国大会にて発表していただきます</li>
+            </ul>
+
+            <h3>2. 複数チーム登録の禁止</h3>
+            <p><strong>1人の参加者が複数のチームに所属することを禁止します。</strong></p>
+            <ul>
+                <li>個人チームとして登録しつつ、別のチームにメンバーとして参加することはできません</li>
+                <li>既に複数チームに登録している場合は、1つのチームを選択するか、チームを統合してください</li>
+                <li>チーム統合を希望する場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" target="_blank">お問い合わせフォーム</a>よりご連絡ください</li>
+            </ul>
+
+            <h3>3. コラボレーションとディスカッションのルール</h3>
+            <p><strong>チーム内での知見共有・コード共有は自由</strong>ですが、<strong>チーム外でのソリューション共有は禁止</strong>します。</p>
+
+            <h4>✅ 許可される行為</h4>
+            <ul>
+                <li>チーム内での知見共有・コード共有</li>
+                <li>公開情報（論文、オープンソース、事前学習モデル）の利用</li>
+                <li>一般的な技術についての議論</li>
+            </ul>
+
+            <h4>❌ 禁止される行為</h4>
+            <ul>
+                <li>異なるチーム間でのソリューション・アプローチ・予測結果の共有</li>
+                <li>同一組織（大学・企業等）内でも、チームが異なれば知見の共有は禁止</li>
+            </ul>
+
+            <h3>4. 提出回数の制限</h3>
+            <ul>
+                <li><strong>Development Phase</strong>: 1日あたり5回まで（Public Test Datasetに対する提出）</li>
+                <li><strong>Test Phase</strong>: 1回限り（Private Test Datasetに対する提出）</li>
+            </ul>
+
+            <h3>5. 違反時の対応</h3>
+            <p>以下のような行為が発覚した場合、運営チームは以下の措置を講じる権利を有します：</p>
+            <ul>
+                <li>該当する提出の無効化</li>
+                <li>リーダーボードからの削除</li>
+                <li>参加資格の剥奪</li>
+                <li>受賞の取り消し（受賞後に発覚した場合）</li>
+            </ul>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <p style="margin: 0;"><strong>⚠️ 重要な注意事項</strong></p>
+                <p style="margin: 10px 0 0 0;">これらのルールは、全ての参加者にとって公平な競争環境を維持するために設定されています。ご不明な点がある場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" target="_blank">お問い合わせフォーム</a>よりお気軽にご連絡ください。</p>
+            </div>
+        </div>
+
         <!-- Submission -->
         <div class="section">
             <h2><i class="fas fa-upload"></i> 提出方法</h2>
-            <p>提出には以下が必要です：</p>
+
+            <h3>Development Phase（開発フェーズ）</h3>
+            <p>Development Phaseでは、以下のファイルを提出してください：</p>
+            <ol>
+                <li><strong>予測結果ファイル</strong> - 出力フォーマットに従ったJSONL形式</li>
+            </ol>
+            <p>※ この段階では実行コードやREADMEの提出は不要です。</p>
+            <p>※ 提出回数：<strong>1日あたり5回まで</strong></p>
+
+            <h3>Test Phase（テストフェーズ）</h3>
+            <p>Test Phaseでは、以下のファイルを提出してください：</p>
             <ol>
                 <li><strong>予測結果ファイル</strong> - 出力フォーマットに従ったJSONL形式</li>
                 <li><strong>実行コード</strong> - 結果を再現可能なプログラム（単一または複数ファイル）</li>
                 <li><strong>README</strong> - 手法の説明、実行環境、依存ライブラリ等を記載</li>
             </ol>
             <p>※ 実行コードは評価の再現性確認のために使用します。</p>
-            <p>提出システムの詳細は現在準備中です。決定次第、公開いたします。</p>
+            <p>※ 提出回数：<strong>1回限り</strong></p>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <p style="margin: 0;"><strong>⚠️ 重要</strong></p>
+                <p style="margin: 10px 0 0 0;">Test Phaseでは、実行コードとREADMEの提出が必須です。提出がない場合、評価対象外となりますのでご注意ください。</p>
+            </div>
+
+            <h3>提出システム</h3>
+            <p>提出は以下のシステムから行ってください。参加登録時にお知らせしたID・パスワードでログインできます。</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://la-bench-leaderboard.onrender.com/" class="btn btn-primary" target="_blank" style="font-size: 1.1rem; padding: 15px 30px;">
+                    <i class="fas fa-upload"></i> 提出システムにアクセス
+                </a>
+            </div>
+            <p style="text-align: center; color: #666; font-size: 0.9rem;">※ IDとパスワードは参加登録後にメールでお知らせしています</p>
         </div>
 
         <!-- Leaderboard -->
         <div class="section">
             <h2><i class="fas fa-trophy"></i> リーダーボード</h2>
+
             <div class="leaderboard-section">
                 <div class="phase-tabs">
                     <div class="phase-tab active" onclick="showPhase('development')">Development Phase</div>
                     <div class="phase-tab" onclick="showPhase('test')">Test Phase</div>
                 </div>
-                
+
                 <div id="development-phase" class="phase-content">
                     <p style="text-align: center; color: #666; padding: 40px;">
                         コンペティション開始後に順位が表示されます
                     </p>
                 </div>
-                
+
                 <div id="test-phase" class="phase-content" style="display: none;">
                     <p style="text-align: center; color: #666; padding: 40px;">
                         2025年11月13日以降に順位が表示されます
@@ -651,10 +748,16 @@
             <div class="faq-item">
                 <div class="faq-question">Q: 応募に必要な条件はありますか？</div>
                 <div class="faq-answer">
-                    <p>以下の条件を満たす必要があります：</p>
+                    <p>特別な応募条件はありません。どなたでも参加登録していただけます。</p>
+                    <p>ただし、参加にあたっては以下の義務があります：</p>
                     <ul>
-                        <li><strong>提出物</strong>：予測結果（JSONL形式）、実行コード、READMEの提出が必須となります。</li>
-                        <li><strong>再現性</strong>：提出された実行コードで結果が再現できる必要があります。</li>
+                        <li><strong>提出義務</strong>：
+                            <ul>
+                                <li>Development Phase: 予測結果（JSONL形式）の提出</li>
+                                <li>Test Phase: 予測結果（JSONL形式）、実行コード、READMEの提出が必須</li>
+                            </ul>
+                        </li>
+                        <li><strong>再現性の確保</strong>：Test Phaseで提出された実行コードで結果が再現できる必要があります。</li>
                         <li><strong>発表義務</strong>：受賞チームは、本コンペティションへの取り組みを人工知能学会全国大会にて発表していただきます。</li>
                     </ul>
                 </div>
@@ -666,7 +769,59 @@
                     <p>はい、チームでの参加が可能です。ただし、受賞時の発表は代表者が行う必要があります。</p>
                 </div>
             </div>
-            
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 1人で複数のチームに参加できますか？</div>
+                <div class="faq-answer">
+                    <p>いいえ、<strong>1人の参加者が複数のチームに所属することは禁止されています</strong>。個人チームとして登録しつつ、別のチームにメンバーとして参加することもできません。</p>
+                    <p>既に複数チームに登録している場合は、1つのチームを選択するか、チームを統合してください。チーム統合を希望する場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdoJSoDHxWxy7bF7I-rWvs5sTQxtdzGjmAskJm1OzGd-qzkPw/viewform" target="_blank">お問い合わせフォーム</a>よりご連絡ください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 同じ組織（大学・企業）の別のチームと相談してもいいですか？</div>
+                <div class="faq-answer">
+                    <p>いいえ、<strong>チームが異なる場合、同一組織内でもソリューション・アプローチ・予測結果の共有は禁止されています</strong>。</p>
+                    <p>公平な競争環境を維持するため、チーム外での知見共有はご遠慮ください。一般的な技術についての議論や、公開情報（論文、オープンソース等）の利用は自由です。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Development Phaseの提出回数制限はどのように管理されますか？</div>
+                <div class="faq-answer">
+                    <p>Development Phaseでは、<strong>1日あたり5回まで</strong>Public Test Datasetに対する提出が可能です。</p>
+                    <p>複数チーム登録による提出回数制限の回避は禁止されています。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 事前学習済みモデルやオープンソースのライブラリは使用できますか？</div>
+                <div class="faq-answer">
+                    <p>はい、<strong>公開されている事前学習済みモデル、オープンソースライブラリ、論文等は自由に使用できます</strong>。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Development Phaseでも実行コードの提出は必要ですか？</div>
+                <div class="faq-answer">
+                    <p>いいえ、<strong>Development Phaseでは予測結果ファイルのみの提出</strong>で構いません。実行コードとREADMEの提出は、Test Phaseで必須となります。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Test Phaseで実行コードを提出しなかった場合はどうなりますか？</div>
+                <div class="faq-answer">
+                    <p><strong>評価対象外</strong>となります。Test Phaseでは、予測結果ファイル、実行コード、READMEの3点セットの提出が必須です。再現性の確認ができない場合、受賞資格を失う可能性があります。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 受賞した場合、必ず人工知能学会全国大会で発表する必要がありますか？</div>
+                <div class="faq-answer">
+                    <p>はい、<strong>受賞チームは人工知能学会全国大会での発表が義務</strong>となります。発表ができない場合は、受賞を辞退していただく必要があります。代表者による発表で構いません。</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Sponsors -->

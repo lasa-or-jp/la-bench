@@ -1,0 +1,45 @@
+{
+  "id": "private_test_5",
+  "input": {
+    "instruction": "与えられたcDNAサンプルを用いて、PCR反応により Sox2 遺伝子の発現量を⊿⊿Cq法（相対定量法）にて定量する。内在性コントロールとして Actb 遺伝子を同時に測定する。また、陰性対照としてそれぞれの遺伝子についてnon-template control (NTC) を含める。各条件について n=3 のtechnical replicate実験を行う。キットはTB Green™ Premix Ex Taq™ (Tli RNaseH Plus）を用いる。PCR産物は4℃で保存する。",
+    "mandatory_objects": [
+      "TB Green Premix Ex Taq（2×）（TB Green® Premix Ex Taq™ (Tli RNaseH Plus) に含まれる）",
+      "Sox2 PCR Forward Primer（10 μM）",
+      "Sox2 PCR Reverse Primer（10 μM）",
+      "Actb PCR Forward Primer（10 μM）",
+      "Actb PCR Reverse Primer（10 μM）",
+      "テンプレートDNA (25 μg/mL)",
+      "滅菌精製水",
+      "2 μL チップ",
+      "P2マイクロピペット",
+      "20 μL チップ",
+      "P20マイクロピペット",
+      "リアルタイムPCR用 0.2 mL マイクロチューブ",
+      "リアルタイムPCR装置",
+      "冷蔵庫（4℃）"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "PCR反応液を調製する。１反応あたり、TB Green Premix Ex Taq（2×）12.5 μl 、PCR Forward Primer（10 μM） 0.5 μl、PCR Reverse Primer（10 μM） 0.5 μl、template（＜100 ng） 2 μl 、滅菌精製水 9.5 μl を混合し、１反応あたり25μlとする。"
+      },
+      {
+        "id": 2,
+        "text": "PCR反応を開始する。Holding（初期設定）は95℃、30秒、1サイクルとする。続いて2 Step PCRは、95℃、5秒および60℃、30秒を40サイクルで設定する。最後のDissociationにおいては、95℃、15秒および60℃、30秒、95℃、15秒を1サイクル行う。"
+      }
+    ],
+    "expected_final_states": [
+      "すべての場合のPCR増幅産物が4 °Cで保存されている。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "https://catalog.takara-bio.co.jp/com/tech_info_detail.php?mode=2&masterid=M100005221&unitid=U100006659"
+      },
+      {
+        "id": 2,
+        "text": "https://catalog.takara-bio.co.jp/PDFS/rr420s_j.pdf"
+      }
+    ]
+  }
+}

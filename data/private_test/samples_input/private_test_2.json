@@ -1,0 +1,63 @@
+{
+  "id": "private_test_2",
+  "input": {
+    "instruction": "EMSA [出典1]により、RNA 修飾酵素 ExpA（10-80 pmol の段階希釈 4 系列、および酵素コントロール）と tRNA 2 種（Ala tRNA または Leu tRNA 各 20 pmol、および ExpA 80 pmol 系列に対する基質コントロール）との結合を評価する。反応条件は 37 °C で 1 時間、反応スケールは 10 µL とし、反応液の終濃度組成は 50 mM HEPES–KOH pH 7.5、5 mM Mg(OAc)₂、100 mM KCl、1 mM spermine、1 mM DTT、12% (v/v) グリセロールとする。6% 非変性ポリアクリルアミドゲル（ランニングバッファー：50 mM HEPES–KOH pH 7.5、5 mM Mg(OAc)₂、1 mM DTT）で 4 °C で電気泳動し、まず SYBR Safe で tRNA を検出し、続いて CBB 染色で酵素を染色する。",
+    "mandatory_objects": [
+      "ExpA（20 µM ストック、酵素希釈バッファー中）",
+      "tRNA（10 µM ストック）",
+      "1 M HEPES–KOH (pH 7.5) ストック（4 °C 保存）",
+      "4 M KCl ストック（室温保存）",
+      "1 M Mg(OAc)₂ ストック（室温保存）",
+      "100 mM spermine ストック（–20 °C 保存）",
+      "1 M DTT ストック（–20 °C、遮光保存）",
+      "酵素希釈バッファー［50 mM HEPES–KOH pH 7.5、200 mM KCl、10 mM Mg(OAc)₂、1 mM DTT、30% (v/v) グリセロール］",
+      "6% 非変性ポリアクリルアミドゲル（アクリルアミド:ビス = 29:1、プロトコル外で作成済）",
+      "電気泳動装置",
+      "ゲル撮影装置（青色光源蛍光および白色光源対応）",
+      "冷蔵チャンバー（4 °C、庫内用電源コンセント付）",
+      "SYBR Safe DNA Gel Stain (10,000× stock) [出典2]",
+      "CBB Stain One [出典3]"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "酵素と基質を反応溶液中で 37 °C で 1 時間インキュベートする（標準反応スケール：10 µL）。反応後のサンプルは氷上操作。"
+      },
+      {
+        "id": 2,
+        "text": "速やかに反応物を冷蔵チャンバー内で、6% 非変性ゲルを用いて電気泳動（150Vで1時間）する。このとき、結合に影響する恐れのある色素は入れない。見えにくいため注意する。"
+      },
+      {
+        "id": 3,
+        "text": "SYBR Safe で RNA を染色し、青色光源で蛍光画像を撮像する。"
+      },
+      {
+        "id": 4,
+        "text": "CBB でタンパク質を染色し、白色光源で撮像する。"
+      },
+      {
+        "id": 5,
+        "text": "両画像から酵素濃度依存的な RNA のバンドシフトを解析する。"
+      }
+    ],
+    "expected_final_states": [
+      "実験指示にある反応溶液（総計 11 系列：酵素なし・基質なしのコントロール 3 系列 + 酵素段階希釈 4 系列 × tRNA 2 種の計 8 系列）が正しく調製され、全量が使用されている。調製時の終濃度組成は 50 mM HEPES–KOH pH 7.5、5 mM Mg(OAc)₂、100 mM KCl、1 mM spermine、1 mM DTT、12% グリセロール、ExpA 0-80 pmol、tRNA 0 または 20 pmolになっている。",
+      "反応溶液 11 系列の 6% 非変性ゲル電気泳動後、SYBR Safe のみで染色されたRNA 可視化画像が保存されている。",
+      "同じ 11 系列のゲルをさらに CBB で染色し、タンパク質可視化画像が保存されている。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "Sakai, Y. et al. Dual pathways of tRNA hydroxylation ensure efficient translation. *Nat. Commun.* 10, 1, 2858 (2019). https://www.nature.com/articles/s41467-019-10750-8"
+      },
+      {
+        "id": 2,
+        "text": "Thermo Fisher Scientific. SYBR™ Safe DNA Gel Stain User Guide (MAN0002338). https://documents.thermofisher.com/TFS-Assets/LSG/manuals/sybr_safe_dna_gel_stain_man.pdf"
+      },
+      {
+        "id": 3,
+        "text": "Nacalai Tesque. CBB Stain One (Ready To Use) Product No.04543, https://www.nacalai.co.jp/products/181/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "private_test_4",
+  "input": {
+    "instruction": "12種類の total RNA サンプルそれぞれについて逆転写反応に供し、cDNA産物を得たい。逆転写反応には PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time) を使用する。",
+    "mandatory_objects": [
+      "total RNA サンプル（400 μg/mL） 12種類",
+      "5×gDNA Eraser Buffer（PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time)に含まれる）",
+      "gDNA Eraser（PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time)に含まれる）",
+      "5×PrimeScript Buffer 2 (for Real Time)（PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time)に含まれる）",
+      "PrimeScript RT Enzyme Mix I（PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time)に含まれる）",
+      "RT Primer Mix（PrimeScript™ RT reagent Kit with gDNA Eraser (Perfect Real Time)に含まれる）",
+      "RNase Free dH2​O",
+      "リアルタイムPCR用 0.2 mL マイクロチューブ",
+      "マイクロピペット",
+      "チップ",
+      "アイスボックス",
+      "サーマルサイクラー",
+      "卓上遠心機",
+      "卓上ボルテックスミキサー",
+      "−20℃ 冷凍庫"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "氷上でゲノムDNA除去反応液を調製する（１反応あたり 10.0μl。5×gDNA Eraser Buffer：2.0 μl、gDNA Eraser：1.0 μl、total RNA、RNase Free dH2O）。なお、RNAサンプル以外の要素を必要本数＋3本分調製し、マイクロチューブに分注後、RNAサンプルを添加するようにする。また、total RNAは１反応あたり 2 μg を使用するようにする。"
+      },
+      { "id": 2, "text": "ゲノムDNA除去反応液を室温で5分静置する。" },
+      {
+        "id": 3,
+        "text": "氷上で逆転写反応液（１反応あたり、1. の反応液：10.0 μl、5×PrimeScript Buffer 2 (for Real Time)：4.0 μl、Master mix  10 μl）を調製する。なお、MasterMixは１反応あたり10 μLで、PrimeScript RT Enzyme Mix I：1.0 μl、 RT Primer Mix：4.0 μl、RNase Free dH2O：1.0 μlとする。また、Master mixは必要本数＋3本分調製し、1. の反応液に10 μlずつ添加するようにする。"
+      },
+      {
+        "id": 4,
+        "text": "直ちに反応液を軽く攪拌して均一にした後、37℃ 15 minで逆転写反応を行う。"
+      },
+      { "id": 5, "text": "85℃ で 5 sec の酵素失活反応を行う。" },
+      { "id": 6, "text": "cDNA合成産物を－20℃以下で保存する。" }
+    ],
+    "expected_final_states": [
+      "0.2 mL マイクロチューブに入った12種類のcDNA 合成産物が−20℃ で保存された状態。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "https://catalog.takara-bio.co.jp/product/basic_info.php?catcd=B1001170&subcatcd=B1000877&unitid=U100006536"
+      },
+      {
+        "id": 2,
+        "text": "https://catalog.takara-bio.co.jp/com/tech_info_detail.php?mode=2&masterid=M100005132&unitid=U100006536"
+      }
+    ]
+  }
+}

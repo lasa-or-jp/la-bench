@@ -1,0 +1,76 @@
+{
+  "id": "private_test_9",
+  "input": {
+    "instruction": "2つの96-well plateのサンプルのRT-qPCの調整をしてください。1つ目の96-well plate（plate_1）は、12 箇所で培養している細胞に対して、それぞれ遺伝子A,Bの発現を測定したいです。2つ目の96-well plate（plate_2）は、2箇所で培養している細胞に対して、それぞれ遺伝子A,B,C,D,E,F,Gの発現を測定したいです。",
+    "mandatory_objects": [
+      "CellAmp Washing Buffer",
+      "CellAmp Lysis Buffer II",
+      "DNase I for Direct RNA Prep",
+      "Stop Solution",
+      "PrimeScript RT Enzyme Mix",
+      "5 × CellAmp Buffer II",
+      "RT Primer Mix",
+      "RNase Free H2O",
+      "TB Green Fast qPCR Mix（2 ×）",
+      "遺伝子Aの PCR Forward Primer（10 μM）",
+      "遺伝子Aの PCR Reverse Primer（10 μM）",
+      "遺伝子Bの PCR Forward Primer（10 μM）",
+      "遺伝子Bの PCR Reverse Primer（10 μM）",
+      "遺伝子Cの PCR Forward Primer（10 μM）",
+      "遺伝子Cの PCR Reverse Primer（10 μM）",
+      "遺伝子Dの PCR Forward Primer（10 μM）",
+      "遺伝子Dの PCR Reverse Primer（10 μM）",
+      "遺伝子Eの PCR Forward Primer（10 μM）",
+      "遺伝子Eの PCR Reverse Primer（10 μM）",
+      "遺伝子Fの PCR Forward Primer（10 μM）",
+      "遺伝子Fの PCR Reverse Primer（10 μM）",
+      "遺伝子Gの PCR Forward Primer（10 μM）",
+      "遺伝子Gの PCR Reverse Primer（10 μM）",
+      "LightCycler 96 System",
+      "96-well のPCR用プレート"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "マイクロ遠心チューブにLysis 溶液を氷上で調製する。1反応あたり、CellAmp Lysis Buffer IIを48 μl、DNase I for Direct RNA Prepを2 μl調製する。"
+      },
+      { "id": 2, "text": "96-well plateの培地を可能な限り吸引除去する。" },
+      {
+        "id": 3,
+        "text": "各ウェルに CellAmp Washing Buffer を 125 μl 加えて洗浄する。"
+      },
+      { "id": 4, "text": "CellAmp Washing Buffer を可能な限り吸引除去する。" },
+      {
+        "id": 5,
+        "text": "各ウェルに 50 μl の Lysis 溶液を添加し、室温（25℃前後）で 5 分間インキュベー トする。"
+      },
+      {
+        "id": 6,
+        "text": "インキュベート後、Stop Solution を 2.5 μl 添加して 5 回ピペッティングを行う。"
+      },
+      {
+        "id": 7,
+        "text": "細胞ライセート以外の反応 Master Mix を氷上で調製する。1反応あたり、5 × CellAmp Buffer IIを4 μl、PrimeScript RT Enzyme Mixを1 μl、RT Primer Mixを1 μl、RNase Free H2Oを12 μl調製する。"
+      },
+      { "id": 8, "text": "Master Mixを反応チューブに 18 μl ずつ分注する。" },
+      {
+        "id": 9,
+        "text": "2 μl の細胞ライセートを反応チューブに添加し、氷上に保持する。"
+      },
+      { "id": 10, "text": "37℃ 30 分、85℃ 5 秒、以降4℃で逆転写反応を行う。" },
+      {
+        "id": 11,
+        "text": "PCR 用プレートにPCR 反応液を調製する。1反応あたり、TB Green Fast qPCR Mix（2 ×）を12.5 μl、1 × PCR Forward Primer（10 μM）を1 μl、PCR Reverse Primer（10 μM）を1 μl、逆転写反応液を4 μl、滅菌精製水 を6.5 μl調製する。"
+      }
+    ],
+    "expected_final_states": [
+      "LightCycler 96 SystemのqPCR装置で実行可能な試薬調整のされたPCR 用プレート。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "CellAmpTM Direct TB Green® RT-qPCR Kit 説明書、タカラバイオ株式会社、https://catalog.takara-bio.co.jp/PDFS/3735a_j.pdf"
+      }
+    ]
+  }
+}

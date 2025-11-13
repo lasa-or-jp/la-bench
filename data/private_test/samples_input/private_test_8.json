@@ -1,0 +1,70 @@
+{
+  "id": "private_test_8",
+  "input": {
+    "instruction": "枯草菌 Bacillus subtilis にシャトルベクターを導入する形質転換を行う。",
+    "mandatory_objects": [
+      "枯草菌グリセロールストック（クロラムフェニコール感受性、BSL1）",
+      "CmR カセットを含むシャトルベクター DNA（100 ng/µL、P1の遺伝子のみ含む）",
+      "NaCl",
+      "Yeast extract",
+      "Tryptone",
+      "アガー",
+      "クロラムフェニコール",
+      "10× MM salt solution［800 mM K₂HPO₄、440 mM KH₂PO₄、34 mM Na₃-citrate、8 mM MgSO₄、150 mM (NH₄)₂SO₄］（滅菌済）",
+      "40% グルコース（滅菌済）",
+      "1 M MgSO₄（滅菌済）",
+      "5% カザミノ酸（フィルター滅菌済）",
+      "50 mM トリプトファン（フィルター滅菌済）",
+      "振盪培養器（37℃）",
+      "卓上遠心機",
+      "分光光度計（OD₆₀₀）または濁度計",
+      "インキュベーター（30℃、37℃）"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "グリセロールストックから LB プレートに枯草菌を植菌し、30℃で約 16 h の overnight 培養を行う。"
+      },
+      {
+        "id": 2,
+        "text": "スプレッダーを用いてプレート上のコロニーを 1 mL の LB に回収・懸濁し、OD を測定する。"
+      },
+      {
+        "id": 3,
+        "text": "OD = 0.05 となるよう、用時調製した C1 medium［1× MM salt、0.5% glucose、5 mM 追加 MgSO₄、0.003% casamino acids、245 µM Trp］（5 mL）に植継ぐ。"
+      },
+      {
+        "id": 4,
+        "text": "OD をモニタリングしながら、十分なエアレーションを確保しつつ、37℃で強く振盪培養する。"
+      },
+      {
+        "id": 5,
+        "text": "early-stationary phase に達したら 500 µL を回収し、遠心して集菌する。"
+      },
+      {
+        "id": 6,
+        "text": "菌体ペレットを、用時調製した C2 medium［1× MM salt、0.5% glucose、5 mM 追加 MgSO₄、0.015% casamino acids、24.5 µM Trp］500 µL に懸濁する。"
+      },
+      {
+        "id": 7,
+        "text": "200 µL を 1.5 mL マイクロチューブに分注し、DNA 1 µg を加える。DNA を加えないネガティブコントロールも同時に作成する。"
+      },
+      { "id": 8, "text": "37℃で 1.5 h 振盪培養する。" },
+      { "id": 9, "text": "LB 600 µL を加え、37℃で 1 h 振盪培養する。" },
+      { "id": 10, "text": "LB + 抗生物質プレートに播種する。" },
+      { "id": 11, "text": "37℃で overnight 培養する。" }
+    ],
+    "expected_final_states": [
+      "クロラムフェニコール溶液を 10 mL 調製し、本実験で使用した残余は小分注のうえ −20℃で保存されている。",
+      "クロラムフェニコール添加・無添加の LB プレートが 10 枚ずつ作成され、本実験で使用した残余はラップで密封して 4℃で保存されている。",
+      "LB + Cm（5 µg/mL）プレート上で、Cm 耐性コロニーが 37℃ overnight で得られている。",
+      "DNA マイナスのネガティブコントロールでは Cm 耐性コロニーが生じていない。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "Yoshida, K., Yamaguchi, H., et al. “Regulation of the ComK transcription factor by MecA–ClpC complexes controls competence in Bacillus subtilis.” Journal of Bacteriology 182, 2411–2415 (2000). https://doi.org/10.1128/JB.182.9.2411-2415.2000"
+      }
+    ]
+  }
+}

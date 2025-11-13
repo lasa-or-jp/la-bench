@@ -1,0 +1,77 @@
+{
+  "id": "private_test_1",
+  "input": {
+    "instruction": "1枚の384-well plateで培養している細胞に対して、cellpaintingを実施してください。",
+    "mandatory_objects": [
+      "全wellが40 µl/well の培地で細胞が培養されている384-well plate",
+      "MitoTracker Deep Redの1 mM ストック溶液",
+      "WGAの0.15 mg/ml ストック溶液",
+      "concanavalin Aの2 mg/ml ストック溶液",
+      "phalloidinの6.6 µM ストック溶液",
+      "SYTO 14の5 mM ストック溶液",
+      "Hoechst 33342の 1 mg/ml ストック溶液",
+      "16% PFA",
+      "HBSS(1×)",
+      "BSA",
+      "Triton X-100"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "生細胞染色液を調製する。100 mlの生細胞染色液を作るには、150 µlのMitoTracker Deep Redストック溶液を100 mlの1× HBSSに溶解する。"
+      },
+      {
+        "id": 2,
+        "text": "染色・透過化溶液を調製する。100 mlの染色・透過化溶液を作るには、125 µlのphalloidinストック溶液、250 µlのconcanavalin Aストック溶液、100 µlのHoechst 33342ストック溶液、1 mlのWGAストック溶液、120 µlのSYTO 14ストック溶液を1× HBSS（1%(wt/vol)BSA及び0.1%(vol/vol)Triton X–100）に溶解する。"
+      },
+      {
+        "id": 3, "text": "生細胞への影響を最小限に抑えるため、培養液はそのまま残した状態で、各ウェルに生細胞染色液を20 µlずつ加え、最終的なウェル容量を60 µlとする。"
+      },
+      {
+        "id": 4,
+        "text": "37°Cのインキュベーターで30分静置する。"
+      },
+      {
+        "id": 5,
+        "text": "細胞を固定するために、各ウェルに 20 µl の 16% PFAを添加し、各ウェルの最終容量が 80 µl、最終濃度が 4% PFA になるようにする。"
+      },
+      {
+        "id": 6,
+        "text": "暗所で20分静置する。"
+      },
+      {
+        "id": 7,
+        "text": "プレートを1× HBSS 80 µlで4回洗浄する。最後に溶液を全て吸引する。"
+      },
+      {
+        "id": 8,
+        "text": "各ウェルに染色・透過化溶液を20 µl加える。"
+      },
+      {
+        "id": 9,
+        "text": "暗所で30分静置する。"
+      },
+      {
+        "id": 10,
+        "text": "プレートを80 µlの1× HBSSで4回洗浄する。各ウェルに最終容量80 µlの1× HBSSを残す。"
+      }
+    ],
+    "expected_final_states": [
+      "蛍光顕微鏡での撮影可能な染色処置のされた384-well plate。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "Cimini, Beth A., et al. \"Optimizing the Cell Painting assay for image-based profiling.\" Nature protocols 18.7 (2023): 1981-2013."
+      },
+      {
+        "id": 2,
+        "text": "Bray, Mark-Anthony, et al. \"Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes.\" Nature protocols 11.9 (2016): 1757-1774."
+      },
+      {
+        "id": 3,
+        "text": "Public Cell Painting wiki, https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki"
+      }
+    ]
+  }
+}

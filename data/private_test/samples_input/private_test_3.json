@@ -1,0 +1,90 @@
+{
+  "id": "private_test_3",
+  "input": {
+    "instruction": "カテナン化された環状 ssDNA を既報 [出典1] に基づいて調製する。プラスミド DNA 10 µg を起点として反応を行い、最終産物はフェノール／クロロホルム抽出およびエタノール沈殿により精製し、滅菌水 40 µL に再溶解する。なお、酵素反応のバッチサイズはプロトコルから変更しないこと。また、中間産物可視化のために取り分ける分による容量減少は、作業簡便のため計算上は無視してよい。",
+    "mandatory_objects": [
+      "プラスミド DNA（100 ng/µL、Tn3 site 2 箇所、Nt.BspQI site 2 箇所を適切に設計済）",
+      "Tn3 resolvase（保存溶液組成：20 mM Tris-HCl pH 7.5、1 mM DTT、0.1 mM EDTA、1 M NaCl、50% (v/v) グリセロール）",
+      "Nt.BspQI（10 U/µL）[出典2]",
+      "Exonuclease III（200 U/µL）[出典3]",
+      "Exonuclease I（20 U/µL）[出典4]",
+      "10× Exo III Buffer［660 mM Tris-HCl (pH 8.0), 6.6 mM MgCl₂］",
+      "1 M Tris-HCl pH 8.2",
+      "1 M MgCl₂",
+      "0.5 M EDTA pH 8.0",
+      "3 M 酢酸ナトリウム pH 5.2",
+      "無水エタノール",
+      "70% エタノール",
+      "フェノール：クロロホルム：イソアミルアルコール（25:24:1、pH≃8、DNA 用平衡品）",
+      "クロロホルム",
+      "サーモサイクラー",
+      "1.2% アガロースゲル（プロトコル外にて作成済）",
+      "1× TAE 緩衝液",
+      "DNA ladder",
+      "6× DNA Loading Dye",
+      "電気泳動装置",
+      "ゲル撮影装置",
+      "エチジウムブロマイド溶液 [出典5]"
+    ],
+    "source_protocol_steps": [
+      {
+        "id": 1,
+        "text": "カテナン化①：反応スケール 50 µL において、以下の反応溶液を氷上で調製する：50 mM Tris-HCl (pH 8.2)、10 mM MgCl₂、0.1 mM EDTA、2.5 µg プラスミド DNA、Tn3 resolvase（1/20 vol）。なお、Tn3 保存溶液由来の成分の持ち込みは考慮しなくてよい。"
+      },
+      {
+        "id": 2,
+        "text": "カテナン化②：37 °C で 2 h 反応後、70 °C で 10 min 加熱して Tn3 活性を失活させ、反応を停止する。"
+      },
+      {
+        "id": 3,
+        "text": "ニック化：室温に戻し、Nt.BspQI を 20 U 加え、50 °C 1 h → 80 °C 20 min の条件で処理する。反応後、5% を泳動確認用に取り分ける。"
+      },
+      {
+        "id": 4,
+        "text": "一本鎖化①：1× Exo III バッファーで前ステップの反応液を 2 倍希釈し、Exo III 200 U および Exo I 40 U を添加する。"
+      },
+      {
+        "id": 5,
+        "text": "一本鎖化②：37 °C で 4 h 反応後、70 °C で 10 min 加熱して反応を停止する。反応後、5% を泳動確認用に取り分ける。"
+      },
+      {
+        "id": 6,
+        "text": "精製：フェノール／クロロホルム抽出 → クロロホルム抽出（2 回）→ エタノール沈殿により酵素・塩を除去する。濃縮後、滅菌水で再溶解する。クロロホルム抽出はフェノールを完全に除去するために 2 回行う。"
+      },
+      {
+        "id": 7,
+        "text": "可視化：インプット、ニック化後、一本鎖化後のサンプルを 1.2% アガロースゲル電気泳動で確認する。"
+      },
+      {
+        "id": 8,
+        "text": "定量：260 nm の吸光度測定により、純度および収量を評価する。"
+      }
+    ],
+    "expected_final_states": [
+      "反応開始時125 ng相当の反応中間産物（ニック化ステップ後および一本鎖化ステップ後）が、125 ng のプラスミド DNA（インプット）とともにアガロース電気泳動され、撮影されている。",
+      "（可視化のための取り分け分を含めて）10 µg のプラスミド DNA が一本鎖 DNA カテナンに変換され、精製・定量されている。"
+    ],
+    "references": [
+      {
+        "id": 1,
+        "text": "Sakai, Y. *ACS Nanoscience Au* (2021). DOI: 10.1021/acsnanoscienceau.1c00027"
+      },
+      {
+        "id": 2,
+        "text": "NEB: Nt.BspQI（R0644） https://www.neb.com/en/products/r0644-ntbspqi?srsltid=AfmBOooNQVu9XSSPUWSVvFJpzvQU3pQBCaFXz5flKJfhO3TfzIKjXw9m"
+      },
+      {
+        "id": 3,
+        "text": "Thermo Scientific Exonuclease III https://documents.thermofisher.com/TFS-Assets/LSG/manuals/MAN0011997_Exonuclease_III_Exo_III_UG.pdf"
+      },
+      {
+        "id": 4,
+        "text": "Thermo Scientific Exonuclease I https://documents.thermofisher.com/TFS-Assets/LSG/manuals/MAN0012007_Exonuclease_I_Exo_I_UG.pdf"
+      },
+      {
+        "id": 5,
+        "text": "Nacalai Tesque 臭化エチジウム溶液（0.44 mg/mL）https://www.nacalai.co.jp/products/164/"
+      }
+    ]
+  }
+}

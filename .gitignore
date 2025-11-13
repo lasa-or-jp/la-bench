@@ -51,7 +51,10 @@ ehthumbs.db
 Thumbs.db
 
 # Data files (to be added later)
-data/private_test/
+data/private_test/samples
+# data/private_test/private_test_input.jsonl は除く
+!data/private_test/private_test_input.jsonl
+
 *.pdf
 *.csv
 *.xlsx

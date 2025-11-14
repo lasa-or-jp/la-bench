@@ -93,7 +93,7 @@
 ### Test Phase（テストフェーズ）
 - **評価対象データ**: Private Test Dataset（Development Phase終了時に公開）
 - **提出内容**: Private Test Datasetの処理結果を所定フォーマットで提出
-- **提出回数**: 1回限り
+- **提出回数**: 何度でも可能（**評価対象は最後に提出されたファイルのみ**）
 - **提出期限**: データ公開から7日以内
 - **評価方法**:
   - **第1次評価**: LLM評価（全チームを対象）
@@ -208,7 +208,9 @@ la-bench/
 
 重要な更新情報やルール変更について、過去のアナウンスを確認できます：
 
-- [2025-11-14: Test Phase開始のお知らせ（日程変更あり）](announcements/2025-11-14_test_phase_start.md)
+- [2025-11-14: Test Phase提出フォーム公開のお知らせ](announcements/2025-11-14_2_submission_form.md)
+  - 提出フォームのURL、提出方法、注意事項について（**提出は何度でも可能、評価対象は最後の提出のみ**）
+- [2025-11-14: Test Phase開始のお知らせ（日程変更あり）](announcements/2025-11-14_1_test_phase_start.md)
   - Private Test Dataset公開と提出締切の1日延長について
 - [2025-10-22: 参加規約の明文化に関するお知らせ](announcements/2025-10-22_participation_rules.md)
   - 複数チーム登録の禁止、コラボレーションルールなど

@@ -219,6 +219,8 @@ Test Phaseでは以下の3点すべての提出が必要です：
 
 重要な更新情報やルール変更について、過去のアナウンスを確認できます：
 
+- [2025-11-21: 【緊急】ファイルサイズ制限について](announcements/2025-11-21_file_size_limit.md)
+  - 実行コード50MB、README5MBの制限と対処法
 - [2025-11-21: 本日提出締切のお知らせ](announcements/2025-11-21_submission_deadline.md)
   - 50チーム超の参加、賞金増額（90万円）、サーバー増強について
 - [2025-11-14: Test Phase提出フォーム公開のお知らせ](announcements/2025-11-14_2_submission_form.md)

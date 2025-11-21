@@ -198,7 +198,7 @@ Test Phaseでは以下の3点すべての提出が必要です：
 
 **提出システムURL**: https://la-bench-leaderboard.onrender.com/
 
-- Development Phase: 「パブリックテスト提出」セクションから提出
+- Development Phase: 「提出フォーム」セクションから提出
 - Test Phase: 「プライベートテスト提出」セクションから提出
 
 ※ IDとパスワードは参加登録後にメールでお知らせしています。

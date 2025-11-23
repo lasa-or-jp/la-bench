@@ -219,6 +219,8 @@ Test Phaseでは以下の3点すべての提出が必要です：
 
 重要な更新情報やルール変更について、過去のアナウンスを確認できます：
 
+- [2025-11-23: Test Phase終了のお知らせ](announcements/2025-11-23_test_phase_end.md)
+  - 結果発表（12月20日）までのスケジュール、今後の展望について
 - [2025-11-21: 【緊急】ファイルサイズ制限について](announcements/2025-11-21_2_file_size_limit.md)
   - 実行コード50MB、README5MBの制限と対処法
 - [2025-11-21: 本日提出締切のお知らせ](announcements/2025-11-21_1_submission_deadline.md)

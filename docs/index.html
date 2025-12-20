@@ -291,6 +291,66 @@
         .rank-2 { color: #C0C0C0; font-weight: bold; }
         .rank-3 { color: #CD7F32; font-weight: bold; }
 
+        /* Announcement Cards */
+        .announcement-card {
+            display: block;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f6f8fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            cursor: pointer;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #eef1f5;
+        }
+
+        .announcement-card.announcement-urgent {
+            background: #ffebee;
+            border-left-color: #f44336;
+        }
+
+        .announcement-card.announcement-urgent:hover {
+            background: #ffcdd2;
+        }
+
+        .announcement-date {
+            color: #586069;
+            font-size: 0.9rem;
+        }
+
+        .announcement-urgent .announcement-date {
+            color: #c62828;
+        }
+
+        .announcement-title {
+            display: block;
+            color: #0366d6;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-top: 4px;
+        }
+
+        .announcement-card:hover .announcement-title {
+            text-decoration: underline;
+        }
+
+        .announcement-desc {
+            margin-top: 8px;
+            color: #586069;
+            font-size: 0.95rem;
+        }
+
+        .announcement-urgent .announcement-desc {
+            color: #c62828;
+        }
+
         /* FAQ */
         .faq-item {
             margin-bottom: 25px;
@@ -527,69 +587,54 @@
 
             <div style="margin: 20px 0;">
                 <ul style="list-style: none; padding: 0;">
-                    <li style="margin: 15px 0; padding: 15px; background: #d4edda; border-radius: 6px; border-left: 4px solid #28a745;">
-                        <strong style="color: #155724;">2025年12月20日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-12-20_results_announcement.md" target="_blank" style="color: #155724; text-decoration: none; font-weight: 600;">
-                            採点結果のご報告
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-12-20_results_announcement.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年12月20日</strong>
+                            <span class="announcement-title">採点結果のご報告</span>
+                            <div class="announcement-desc">LLM評価・専門家評価の結果、表彰対象チーム、人工知能学会での発表について</div>
                         </a>
-                        <div style="margin-top: 8px; color: #155724; font-size: 0.95rem;">
-                            <strong>LLM評価・専門家評価の結果、表彰対象チーム、人工知能学会での発表について</strong>
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
-                        <strong style="color: #856404;">2025年11月23日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-23_test_phase_end.md" target="_blank" style="color: #0366d6; text-decoration: none; font-weight: 500;">
-                            Test Phase終了のお知らせ
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-23_test_phase_end.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年11月23日</strong>
+                            <span class="announcement-title">Test Phase終了のお知らせ</span>
+                            <div class="announcement-desc">結果発表（12月20日）までのスケジュール、今後の展望について</div>
                         </a>
-                        <div style="margin-top: 8px; color: #856404; font-size: 0.95rem;">
-                            <strong>結果発表（12月20日）までのスケジュール、今後の展望について</strong>
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #ffebee; border-radius: 6px; border-left: 4px solid #f44336;">
-                        <strong style="color: #c62828;">2025年11月21日【緊急】</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-21_2_file_size_limit.md" target="_blank" style="color: #c62828; text-decoration: none; font-weight: 600;">
-                            ファイルサイズ制限について
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-21_2_file_size_limit.md" target="_blank" class="announcement-card announcement-urgent">
+                            <strong class="announcement-date">2025年11月21日【緊急】</strong>
+                            <span class="announcement-title">ファイルサイズ制限について</span>
+                            <div class="announcement-desc">実行コード50MB、README5MBの制限と対処法</div>
                         </a>
-                        <div style="margin-top: 8px; color: #c62828; font-size: 0.95rem;">
-                            <strong>実行コード50MB、README5MBの制限と対処法</strong>
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
-                        <strong style="color: #856404;">2025年11月21日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-21_1_submission_deadline.md" target="_blank" style="color: #0366d6; text-decoration: none; font-weight: 500;">
-                            本日提出締切のお知らせ
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-21_1_submission_deadline.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年11月21日</strong>
+                            <span class="announcement-title">本日提出締切のお知らせ</span>
+                            <div class="announcement-desc">50チーム超の参加、賞金増額（90万円）、サーバー増強について</div>
                         </a>
-                        <div style="margin-top: 8px; color: #856404; font-size: 0.95rem;">
-                            <strong>50チーム超の参加、賞金増額（90万円）、サーバー増強について</strong>
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #f6f8fa; border-radius: 6px; border-left: 4px solid #667eea;">
-                        <strong style="color: #667eea;">2025年11月14日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-14_2_submission_form.md" target="_blank" style="color: #0366d6; text-decoration: none; font-weight: 500;">
-                            Test Phase提出フォーム公開のお知らせ
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-14_2_submission_form.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年11月14日</strong>
+                            <span class="announcement-title">Test Phase提出フォーム公開のお知らせ</span>
+                            <div class="announcement-desc">提出フォームのURL、提出方法、注意事項について</div>
                         </a>
-                        <div style="margin-top: 8px; color: #586069; font-size: 0.95rem;">
-                            提出フォームのURL、提出方法、注意事項について<br>
-                            <strong>※ 提出は何度でも可能、評価対象は最後の提出のみ</strong>
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #f6f8fa; border-radius: 6px; border-left: 4px solid #667eea;">
-                        <strong style="color: #667eea;">2025年11月14日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-14_1_test_phase_start.md" target="_blank" style="color: #0366d6; text-decoration: none; font-weight: 500;">
-                            Test Phase開始のお知らせ（日程変更あり）
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-11-14_1_test_phase_start.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年11月14日</strong>
+                            <span class="announcement-title">Test Phase開始のお知らせ（日程変更あり）</span>
+                            <div class="announcement-desc">Private Test Dataset公開と提出締切の1日延長について</div>
                         </a>
-                        <div style="margin-top: 8px; color: #586069; font-size: 0.95rem;">
-                            Private Test Dataset公開と提出締切の1日延長について
-                        </div>
                     </li>
-                    <li style="margin: 15px 0; padding: 15px; background: #f6f8fa; border-radius: 6px; border-left: 4px solid #667eea;">
-                        <strong style="color: #667eea;">2025年10月22日</strong>
-                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-10-22_participation_rules.md" target="_blank" style="color: #0366d6; text-decoration: none; font-weight: 500;">
-                            参加規約の明文化に関するお知らせ
+                    <li>
+                        <a href="https://github.com/lasa-or-jp/la-bench/blob/main/announcements/2025-10-22_participation_rules.md" target="_blank" class="announcement-card">
+                            <strong class="announcement-date">2025年10月22日</strong>
+                            <span class="announcement-title">参加規約の明文化に関するお知らせ</span>
+                            <div class="announcement-desc">複数チーム登録の禁止、コラボレーションルールなど</div>
                         </a>
-                        <div style="margin-top: 8px; color: #586069; font-size: 0.95rem;">
-                            複数チーム登録の禁止、コラボレーションルールなど
-                        </div>
                     </li>
                 </ul>
             </div>

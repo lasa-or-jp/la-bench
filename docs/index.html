@@ -867,17 +867,17 @@
                     <!-- Test Phase内のサブタブ -->
                     <div class="scoring-tabs" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
                         <button class="scoring-tab active" onclick="showScoring('llm')" style="padding: 8px 20px; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
-                            <i class="fas fa-robot"></i> LLM採点
+                            <i class="fas fa-robot"></i> LLM評価
                         </button>
                         <button class="scoring-tab" onclick="showScoring('expert')" style="padding: 8px 20px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
-                            <i class="fas fa-user-tie"></i> 専門家採点
+                            <i class="fas fa-user-tie"></i> 専門家評価
                         </button>
                     </div>
 
-                    <!-- LLM採点リーダーボード -->
+                    <!-- LLM評価リーダーボード -->
                     <div id="llm-scoring" class="scoring-content">
                         <p style="text-align: center; color: #586069; font-size: 0.9rem; margin-bottom: 15px;">
-                            <i class="fas fa-robot"></i> LLMによる自動採点結果（全21チーム）
+                            <i class="fas fa-robot"></i> LLMによる自動評価結果（全21チーム）
                         </p>
                         <table class="leaderboard-table">
                             <thead>
@@ -913,10 +913,10 @@
                         </table>
                     </div>
 
-                    <!-- 専門家採点リーダーボード -->
+                    <!-- 専門家評価リーダーボード -->
                     <div id="expert-scoring" class="scoring-content" style="display: none;">
                         <p style="text-align: center; color: #586069; font-size: 0.9rem; margin-bottom: 15px;">
-                            <i class="fas fa-user-tie"></i> 専門家による採点結果（LLM採点上位10チームを対象）
+                            <i class="fas fa-user-tie"></i> 専門家による評価結果（LLM評価上位10チームを対象）
                         </p>
                         <table class="leaderboard-table">
                             <thead>

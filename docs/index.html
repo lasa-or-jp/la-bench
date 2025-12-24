@@ -863,38 +863,83 @@
                     <p style="text-align: center; color: #333; margin-bottom: 15px;">
                         Private Test（最終提出に基づく結果）
                     </p>
-                    <table class="leaderboard-table">
-                        <thead>
-                            <tr>
-                                <th>順位</th>
-                                <th>チーム</th>
-                                <th>スコア</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td class="rank-1">1</td><td>cabbage patch</td><td>9.2889</td></tr>
-                            <tr><td class="rank-2">2</td><td>satoshihirose</td><td>9.2852</td></tr>
-                            <tr><td class="rank-3">3</td><td>NinNinNin</td><td>9.1259</td></tr>
-                            <tr><td>4</td><td>O_AI</td><td>9.0259</td></tr>
-                            <tr><td>5</td><td>Team SL</td><td>9.0148</td></tr>
-                            <tr><td>6</td><td>moroqq82</td><td>8.8889</td></tr>
-                            <tr><td>7</td><td>moomoo</td><td>8.7963</td></tr>
-                            <tr><td>8</td><td>Chem3</td><td>8.7185</td></tr>
-                            <tr><td>9</td><td>falcon</td><td>8.7148</td></tr>
-                            <tr><td>10</td><td>JIYU-JIZAI</td><td>8.6037</td></tr>
-                            <tr><td>11</td><td>shinso ryodan</td><td>8.5630</td></tr>
-                            <tr><td>12</td><td>pppi</td><td>8.2519</td></tr>
-                            <tr><td>13</td><td>br</td><td>8.0889</td></tr>
-                            <tr><td>14</td><td>K-Lab</td><td>8.0741</td></tr>
-                            <tr><td>15</td><td>Aionic</td><td>7.3111</td></tr>
-                            <tr><td>16</td><td>wwest</td><td>7.2667</td></tr>
-                            <tr><td>17</td><td>dakesan</td><td>7.2222</td></tr>
-                            <tr><td>18</td><td>umeneru</td><td>6.6815</td></tr>
-                            <tr><td>19</td><td>CubIS</td><td>6.3407</td></tr>
-                            <tr><td>20</td><td>r.n</td><td>3.1370</td></tr>
-                            <tr><td>21</td><td>ショウウン</td><td>2.9704</td></tr>
-                        </tbody>
-                    </table>
+
+                    <!-- Test Phase内のサブタブ -->
+                    <div class="scoring-tabs" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                        <button class="scoring-tab active" onclick="showScoring('llm')" style="padding: 8px 20px; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            <i class="fas fa-robot"></i> LLM採点
+                        </button>
+                        <button class="scoring-tab" onclick="showScoring('expert')" style="padding: 8px 20px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            <i class="fas fa-user-tie"></i> 専門家採点
+                        </button>
+                    </div>
+
+                    <!-- LLM採点リーダーボード -->
+                    <div id="llm-scoring" class="scoring-content">
+                        <p style="text-align: center; color: #586069; font-size: 0.9rem; margin-bottom: 15px;">
+                            <i class="fas fa-robot"></i> LLMによる自動採点結果（全21チーム）
+                        </p>
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>順位</th>
+                                    <th>チーム</th>
+                                    <th>スコア</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="rank-1">1</td><td>cabbage patch</td><td>9.2889</td></tr>
+                                <tr><td class="rank-2">2</td><td>satoshihirose</td><td>9.2852</td></tr>
+                                <tr><td class="rank-3">3</td><td>NinNinNin</td><td>9.1259</td></tr>
+                                <tr><td>4</td><td>O_AI</td><td>9.0259</td></tr>
+                                <tr><td>5</td><td>Team SL</td><td>9.0148</td></tr>
+                                <tr><td>6</td><td>moroqq82</td><td>8.8889</td></tr>
+                                <tr><td>7</td><td>moomoo</td><td>8.7963</td></tr>
+                                <tr><td>8</td><td>Chem3</td><td>8.7185</td></tr>
+                                <tr><td>9</td><td>falcon</td><td>8.7148</td></tr>
+                                <tr><td>10</td><td>JIYU-JIZAI</td><td>8.6037</td></tr>
+                                <tr><td>11</td><td>shinso ryodan</td><td>8.5630</td></tr>
+                                <tr><td>12</td><td>pppi</td><td>8.2519</td></tr>
+                                <tr><td>13</td><td>br</td><td>8.0889</td></tr>
+                                <tr><td>14</td><td>K-Lab</td><td>8.0741</td></tr>
+                                <tr><td>15</td><td>Aionic</td><td>7.3111</td></tr>
+                                <tr><td>16</td><td>wwest</td><td>7.2667</td></tr>
+                                <tr><td>17</td><td>dakesan</td><td>7.2222</td></tr>
+                                <tr><td>18</td><td>umeneru</td><td>6.6815</td></tr>
+                                <tr><td>19</td><td>CubIS</td><td>6.3407</td></tr>
+                                <tr><td>20</td><td>r.n</td><td>3.1370</td></tr>
+                                <tr><td>21</td><td>ショウウン</td><td>2.9704</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 専門家採点リーダーボード -->
+                    <div id="expert-scoring" class="scoring-content" style="display: none;">
+                        <p style="text-align: center; color: #586069; font-size: 0.9rem; margin-bottom: 15px;">
+                            <i class="fas fa-user-tie"></i> 専門家による採点結果（LLM採点上位10チームを対象）
+                        </p>
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>順位</th>
+                                    <th>チーム</th>
+                                    <th>スコア</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="rank-1">1</td><td>moroqq82</td><td>8.8</td></tr>
+                                <tr><td class="rank-2">2</td><td>satoshihirose</td><td>8.7</td></tr>
+                                <tr><td class="rank-2">2</td><td>O_AI</td><td>8.7</td></tr>
+                                <tr><td>4</td><td>Team SL</td><td>8.6</td></tr>
+                                <tr><td>4</td><td>falcon</td><td>8.6</td></tr>
+                                <tr><td>6</td><td>NinNinNin</td><td>8.4</td></tr>
+                                <tr><td>7</td><td>Chem3</td><td>7.4</td></tr>
+                                <tr><td>8</td><td>moomoo</td><td>7.2</td></tr>
+                                <tr><td>9</td><td>cabbage patch</td><td>6.9</td></tr>
+                                <tr><td>10</td><td>JIYU-JIZAI</td><td>5.9</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1085,6 +1130,29 @@
             // Show/hide content
             document.getElementById('development-phase').style.display = phase === 'development' ? 'block' : 'none';
             document.getElementById('test-phase').style.display = phase === 'test' ? 'block' : 'none';
+        }
+
+        function showScoring(type) {
+            // Update scoring tab active state
+            document.querySelectorAll('.scoring-tab').forEach(tab => {
+                if (type === 'llm' && tab.textContent.includes('LLM')) {
+                    tab.style.background = '#667eea';
+                    tab.style.color = 'white';
+                    tab.classList.add('active');
+                } else if (type === 'expert' && tab.textContent.includes('専門家')) {
+                    tab.style.background = '#667eea';
+                    tab.style.color = 'white';
+                    tab.classList.add('active');
+                } else {
+                    tab.style.background = 'white';
+                    tab.style.color = '#667eea';
+                    tab.classList.remove('active');
+                }
+            });
+
+            // Show/hide scoring content
+            document.getElementById('llm-scoring').style.display = type === 'llm' ? 'block' : 'none';
+            document.getElementById('expert-scoring').style.display = type === 'expert' ? 'block' : 'none';
         }
     </script>
     <script>

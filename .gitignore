@@ -89,7 +89,11 @@ models/
 
 # Output files
 output/
-outputs
+outputs/*
+!outputs/judge_experiment/
+outputs/judge_experiment/*
+!outputs/judge_experiment/all_results.csv
+!outputs/judge_experiment/summary.json
 results/
 predictions/
 

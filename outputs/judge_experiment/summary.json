@@ -1,0 +1,17 @@
+{
+  "n": 10,
+  "overall_mean": 7.7,
+  "overall_std": 2.3,
+  "sample_mean_min": 3.42,
+  "sample_mean_max": 9.33,
+  "general_mean": 3.49,
+  "specific_mean": 4.22,
+  "strict_checklist_mean": 7.88,
+  "gpt5_tuned_mean": 7.69,
+  "contrastive_dual_pass_mean": 7.54,
+  "max_prompt_diff": 1.13,
+  "model_mean_diff": 0.81,
+  "model_gpt_5_nano_2025_08_07_mean": 7.63,
+  "model_gpt_5_mini_2025_08_07_mean": 7.33,
+  "model_gpt_5_2025_08_07_mean": 8.15
+}

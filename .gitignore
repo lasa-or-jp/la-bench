@@ -106,3 +106,6 @@ docs/.jekyll-metadata
 node_modules/
 package-lock.json
 yarn.lock
+
+# LaTeX build output
+paper/jsai2026/out/

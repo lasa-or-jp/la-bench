@@ -76,7 +76,7 @@
 3. スプーンで30秒間かき混ぜる
 
 詳細については、`data/example/`のサンプルデータをご参照ください。また、目指すべき詳細度の参考として、以下の論文のCompleted protocolセクションもご覧ください：
-- [Multimodal Pragmatic Jailbreak on Text-to-image Models](https://arxiv.org/pdf/2411.00444v1)
+- [Expert-level protocol translation for self-driving labs](https://arxiv.org/pdf/2411.00444v1)
 
 ## 🎯 評価方法
 

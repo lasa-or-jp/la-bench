@@ -56,6 +56,9 @@ data/private_test/samples
 !data/private_test/private_test_input.jsonl
 
 *.pdf
+# 公開サイト掲載用スライド（docs/slides/）は追跡する
+!docs/slides/
+!docs/slides/*.pdf
 *.csv
 *.xlsx
 *.xls

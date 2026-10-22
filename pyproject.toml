@@ -10,6 +10,8 @@ authors = [{ name = "LA Bench" }]
 requires-python = ">=3.10"
 readme = "README.md"
 dependencies = [
+  # eMudhra 中間 CA 侵害への対策。T26-2081 の承認により 14 日待機の例外。
+  "certifi>=2026.10.19",
   "numpy>=1.23",
   "pandas>=1.5",
   "pyyaml>=6.0",
